@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quota</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main>
+  <div class="phero"><div class="wrap">
+    <h1 data-i18n="calcp_h">Калькулятор потерь</h1>
+    <p class="lead" data-i18n="calcp_lead"></p>
+  </div></div>
+
+  <section class="first">
+    <div class="wrap">
+      <div class="calc">
+        <div class="calc-in">
+          <div class="field"><label for="leads"><span data-i18n="c_leads">Заявок в месяц</span></label><input id="leads" type="number" inputmode="numeric" min="0" value="300"></div>
+          <div class="field"><label for="conv"><span data-i18n="c_conv">Из них доходит до оплаты, %</span></label><input id="conv" type="number" inputmode="decimal" min="0" max="100" step="0.5" value="5"></div>
+          <div class="field"><label for="check"><span><span data-i18n="c_check">Средний чек</span>, <span class="cur"></span></span></label><input id="check" type="number" inputmode="numeric" min="0" step="100000" value="3000000"></div>
+          <div class="field"><label for="uplift"><span data-i18n="c_uplift">Рост конверсии после наведения порядка</span><b id="upv">20%</b></label><input id="uplift" type="range" min="5" max="50" step="5" value="20"></div>
+        </div>
+        <div class="calc-out" aria-live="polite">
+          <div><div class="out-lab" data-i18n="c_extra">Дополнительная выручка в месяц</div><div class="out-big" id="o-month">0</div></div>
+          <div class="out-lab"><span data-i18n="c_year">За год</span>: <b id="o-year" style="color:var(--fg)">0</b></div>
+          <div class="cmp">
+            <div class="now"><div class="row"><span data-i18n="c_now">Сейчас</span><b id="o-now">0</b></div><div class="b"><i id="b-now"></i></div></div>
+            <div class="aft"><div class="row"><span data-i18n="c_after">После наведения порядка</span><b id="o-aft">0</b></div><div class="b"><i id="b-aft"></i></div></div>
+          </div>
+          <p class="small" data-i18n="c_note"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head"><h2 data-i18n="how_h"></h2></div>
+      <div class="howto">
+        <div><h3 data-i18n="how1h"></h3><p data-i18n="how1p"></p></div>
+        <div><h3 data-i18n="how2h"></h3><p data-i18n="how2p"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div><h2 data-i18n="h_cta_h"></h2><p data-i18n="h_cta_p"></p></div>
+        <div class="cta"><a class="btn" data-tg href="#" data-i18n="hero_cta1"></a><a class="btn line" href="services.html" data-i18n="nav_services"></a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script>window.PAGE="calc";</script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
