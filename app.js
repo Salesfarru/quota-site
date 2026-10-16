@@ -6,7 +6,7 @@ var CONTACT = {
   email: "info@quota.uz"
 };
 var PAGE = window.PAGE || "home";
-var NAV = [["home","/","nav_home"],["services","services.html","nav_services"],["calc","calculator.html","nav_calc"],["about","about.html","nav_about"],["contacts","contacts.html","nav_contacts"]];
+var NAV = [["home","/","nav_home"],["services","/services","nav_services"],["calc","/calculator","nav_calc"],["about","/about","nav_about"],["contacts","/contacts","nav_contacts"]];
 var lang = "ru";
 try {
   var saved = localStorage.getItem("quota_lang");
@@ -30,7 +30,7 @@ function buildLayout(){
       '<nav class="links" id="links" aria-label="Main">' + links + '</nav>' +
       '<div class="right">' +
       '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="en">EN</button></div>' +
-      '<a class="btn sm hide-s" data-tg href="contacts.html" data-i18n="nav_cta"></a>' +
+      '<a class="btn sm hide-s" data-tg href="/contacts" data-i18n="nav_cta"></a>' +
       '<button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-i18n-aria="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>' +
       '</div></div></header>';
   }
