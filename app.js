@@ -6,7 +6,7 @@ var CONTACT = {
   email: "info@quota.uz"
 };
 var PAGE = window.PAGE || "home";
-var NAV = [["home","index.html","nav_home"],["services","services.html","nav_services"],["calc","calculator.html","nav_calc"],["about","about.html","nav_about"],["contacts","contacts.html","nav_contacts"]];
+var NAV = [["home","/","nav_home"],["services","services.html","nav_services"],["calc","calculator.html","nav_calc"],["about","about.html","nav_about"],["contacts","contacts.html","nav_contacts"]];
 var lang = "ru";
 try {
   var saved = localStorage.getItem("quota_lang");
@@ -26,7 +26,7 @@ function buildLayout(){
     }).join("");
     h.innerHTML =
       '<header class="top"><div class="wrap bar">' +
-      '<a class="logo" href="index.html" aria-label="Quota">' + LOGO + 'Quota</a>' +
+      '<a class="logo" href="/" aria-label="Quota">' + LOGO + 'Quota</a>' +
       '<nav class="links" id="links" aria-label="Main">' + links + '</nav>' +
       '<div class="right">' +
       '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="en">EN</button></div>' +
@@ -39,7 +39,7 @@ function buildLayout(){
     var fl = NAV.map(function(n){ return '<li><a href="' + n[1] + '" data-i18n="' + n[2] + '"></a></li>'; }).join("");
     f.innerHTML =
       '<footer class="bottom"><div class="wrap"><div class="fgrid">' +
-      '<div><a class="logo" href="index.html" aria-label="Quota" style="color:var(--fg)">' + LOGO.replace('id="lg"','id="lg2"').replace('url(#lg)','url(#lg2)') + 'Quota</a><p style="margin-top:12px;max-width:40ch" data-i18n="foot_tag"></p></div>' +
+      '<div><a class="logo" href="/" aria-label="Quota" style="color:var(--fg)">' + LOGO.replace('id="lg"','id="lg2"').replace('url(#lg)','url(#lg2)') + 'Quota</a><p style="margin-top:12px;max-width:40ch" data-i18n="foot_tag"></p></div>' +
       '<div><h4 data-i18n="foot_nav"></h4><ul>' + fl + '</ul></div>' +
       '<div><h4 data-i18n="foot_contact"></h4><ul>' +
       '<li><a href="' + CONTACT.telegram + '" target="_blank" rel="noopener">Telegram</a></li>' +
