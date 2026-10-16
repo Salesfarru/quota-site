@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quota.uz/sitemap.xml

@@ -1,7 +1,7 @@
 window.T = {
 ru:{
  nav_home:"Главная",nav_services:"Услуги",nav_calc:"Калькулятор",nav_about:"О нас",nav_contacts:"Контакты",nav_cta:"Написать",menu:"Меню",
- pt_services:"Услуги",pt_calc:"Калькулятор потерь",pt_about:"О нас",pt_contacts:"Контакты",
+ pt_home:"Quota — консалтинг по продажам в Ташкенте",pt_services:"Услуги",pt_calc:"Калькулятор потерь",pt_about:"О нас",pt_contacts:"Контакты",
  foot_tag:"Консалтинг по продажам в Ташкенте. Находим потери в воронке и устраняем их.",foot_nav:"Разделы",foot_contact:"Связаться",
  more:"Подробнее",cta_tg:"Написать в Telegram",cur:"сум",
  /* home */
@@ -71,7 +71,7 @@ ru:{
 },
 uz:{
  nav_home:"Bosh sahifa",nav_services:"Xizmatlar",nav_calc:"Kalkulyator",nav_about:"Biz haqimizda",nav_contacts:"Aloqa",nav_cta:"Yozish",menu:"Menyu",
- pt_services:"Xizmatlar",pt_calc:"Yo'qotish kalkulyatori",pt_about:"Biz haqimizda",pt_contacts:"Aloqa",
+ pt_home:"Quota — Toshkentda savdo bo'yicha konsalting",pt_services:"Xizmatlar",pt_calc:"Yo'qotish kalkulyatori",pt_about:"Biz haqimizda",pt_contacts:"Aloqa",
  foot_tag:"Toshkentda sotuv bo'yicha konsalting. Voronkadagi yo'qotishlarni topamiz va bartaraf etamiz.",foot_nav:"Bo'limlar",foot_contact:"Bog'lanish",
  more:"Batafsil",cta_tg:"Telegramda yozish",cur:"so'm",
  hero_h1:"Sotuv bo'limi pulni qayerda yo'qotayotganini topamiz va tuzatamiz",
@@ -136,7 +136,7 @@ uz:{
 },
 en:{
  nav_home:"Home",nav_services:"Services",nav_calc:"Calculator",nav_about:"About",nav_contacts:"Contact",nav_cta:"Message us",menu:"Menu",
- pt_services:"Services",pt_calc:"Loss calculator",pt_about:"About",pt_contacts:"Contact",
+ pt_home:"Quota — sales consulting in Tashkent",pt_services:"Services",pt_calc:"Loss calculator",pt_about:"About",pt_contacts:"Contact",
  foot_tag:"Sales consulting in Tashkent. We find the leaks in your funnel and fix them.",foot_nav:"Pages",foot_contact:"Get in touch",
  more:"Learn more",cta_tg:"Message us on Telegram",cur:"UZS",
  hero_h1:"We find where your sales team loses money and fix it",

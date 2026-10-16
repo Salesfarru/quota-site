@@ -2,7 +2,8 @@
 var CONTACT = {
   telegram: "https://t.me/quota_uz", telegramName: "@quota_uz",
   instagram: "https://www.instagram.com/quota.uz", instagramName: "@quota.uz",
-  phoneHref: "tel:+998935546575", phone: "+998 93 554 65 75"
+  phoneHref: "tel:+998935546575", phone: "+998 93 554 65 75",
+  email: "info@quota.uz"
 };
 var PAGE = window.PAGE || "home";
 var NAV = [["home","index.html","nav_home"],["services","services.html","nav_services"],["calc","calculator.html","nav_calc"],["about","about.html","nav_about"],["contacts","contacts.html","nav_contacts"]];
@@ -43,7 +44,8 @@ function buildLayout(){
       '<div><h4 data-i18n="foot_contact"></h4><ul>' +
       '<li><a href="' + CONTACT.telegram + '" target="_blank" rel="noopener">Telegram</a></li>' +
       '<li><a href="' + CONTACT.instagram + '" target="_blank" rel="noopener">Instagram</a></li>' +
-      '<li>' + CONTACT.phone + '</li></ul></div></div>' +
+      '<li>' + CONTACT.phone + '</li>' +
+      '<li><a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a></li></ul></div></div>' +
       '<div class="fcopy">© 2026 Quota</div></div></footer>';
   }
   var burger = document.getElementById("burger");
@@ -93,6 +95,7 @@ function buildContacts(){
   var a1 = document.createElement("a"); a1.href = CONTACT.telegram; a1.target = "_blank"; a1.rel = "noopener"; a1.textContent = CONTACT.telegramName; row("Telegram", a1);
   var a2 = document.createElement("a"); a2.href = CONTACT.instagram; a2.target = "_blank"; a2.rel = "noopener"; a2.textContent = CONTACT.instagramName; row("Instagram", a2);
   var a3 = document.createElement("a"); a3.href = CONTACT.phoneHref; a3.textContent = CONTACT.phone; row(t("l_phone"), a3, CONTACT.phone);
+  var a5 = document.createElement("a"); a5.href = "mailto:" + CONTACT.email; a5.textContent = CONTACT.email; row("Email", a5, CONTACT.email);
   var b4 = document.createElement("b"); b4.textContent = t("city"); row(t("l_city"), b4);
 }
 
@@ -124,7 +127,7 @@ function applyLang(){
   });
   document.querySelectorAll(".cur").forEach(function(el){ el.textContent = t("cur"); });
   document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"); });
-  document.title = PAGE === "home" ? "Quota" : t("pt_" + PAGE) + " · Quota";
+  document.title = PAGE === "home" ? t("pt_home") : t("pt_" + PAGE) + " · Quota";
   buildContacts();
   calc();
 }
