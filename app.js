@@ -6,7 +6,7 @@ var CONTACT = {
   email: "info@quota.uz"
 };
 var PAGE = window.PAGE || "home";
-var NAV = [["home","/","nav_home"],["services","/services","nav_services"],["calc","/calculator","nav_calc"],["about","/about","nav_about"],["contacts","/contacts","nav_contacts"]];
+var NAV = [["home","/","nav_home"],["services","/services","nav_services"],["calc","/calculator","nav_calc"],["about","/about","nav_about"],["faq","/faq","nav_faq"],["contacts","/contacts","nav_contacts"]];
 var lang = "ru";
 try {
   var saved = localStorage.getItem("quota_lang");
