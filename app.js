@@ -127,7 +127,7 @@ function applyLang(){
   });
   document.querySelectorAll(".cur").forEach(function(el){ el.textContent = t("cur"); });
   document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"); });
-  document.title = PAGE === "home" ? t("pt_home") : t("pt_" + PAGE) + " · Quota";
+  var _pt = t("pt_" + PAGE); if (_pt && _pt.indexOf("pt_") !== 0) document.title = PAGE === "home" ? _pt : _pt + " · Quota";
   buildContacts();
   calc();
 }
