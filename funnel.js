@@ -204,10 +204,31 @@
     renderer.setSize(W, H, false);
     var aspect = W / Math.max(H, 1);
     camera.aspect = aspect;
-    var dist = aspect < 1.1 ? Math.min(9.4 * 1.1 / aspect, 16) : 9.4;
-    camera.userData.dist = dist;
-    group.position.x = aspect < 1.1 ? 0.55 : 0.45;
+    var narrow = aspect < 1.1;
+    group.position.x = narrow ? 0 : 0.45;
     camera.updateProjectionMatrix();
+    // fit: keep the funnel large, slide it sideways so the stage labels on its left stay on screen,
+    // and pull the camera back only if both still don't fit
+    var dist = narrow ? Math.min(9.4 * 1.1 / aspect, 16) : 9.4, pad = 8, shift = 0;
+    function place(d, sx){
+      camera.position.set(0, 1.05, d); camera.lookAt(group.position.x * 0.5, -0.15, 0);
+      if (sx) camera.setViewOffset(W, H, -sx, 0, W, H); else camera.clearViewOffset();
+      camera.updateMatrixWorld();
+    }
+    for (var k = 0; k < 40; k++) {
+      place(dist, 0);
+      var need = 0;
+      for (var i = 0; i < 6; i++) {
+        v.set(group.position.x - R(tagY[i]) - 0.12, tagY[i], 0).project(camera);
+        need = Math.max(need, pad - ((v.x * 0.5 + 0.5) * W - tags[i].offsetWidth - 14));
+      }
+      v.set(group.position.x + RT, YT, 0).project(camera);
+      var room = (W - pad) - (v.x * 0.5 + 0.5) * W;
+      if (need <= room) { shift = Math.max(0, need); break; }
+      dist *= 1.06;
+    }
+    place(dist, shift);
+    camera.userData.dist = dist;
     if (reduced) render(0);
   }
   function render(dt){

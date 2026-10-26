@@ -145,6 +145,7 @@ h1,h2{text-wrap:balance}
 .stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
 .tag{position:absolute;left:0;top:0;white-space:nowrap;font-family:var(--f-mono);font-size:12px;color:var(--scene-muted);pointer-events:none;display:flex;gap:8px;align-items:center;will-change:transform,opacity}
 .tag.ln::after{content:"";width:18px;height:1px;background:rgba(163,174,196,.4)}
+@media (max-width:560px){.tag{font-size:10.5px;gap:5px}.tag.ln::after{width:10px}}
 .tag .n{color:var(--scene-loss);font-variant-numeric:tabular-nums}
 .tag.top .n{color:var(--scene-fg)}
 .tag.win,.tag.win .n{color:var(--scene-win)}
