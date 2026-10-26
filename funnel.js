@@ -234,33 +234,11 @@
 
   // Mode switch
   var bNow = document.getElementById('mode-now'), bAfter = document.getElementById('mode-after');
-  // Liquid-glass thumb: two springy edges, the leading one runs ahead, the trailing one catches up
+  // Sliding thumb: a plain pill that glides under the active button
   var seg = document.querySelector('.seg'), thumb = seg.querySelector('.thumb');
-  var eL = {x:0, v:0}, eR = {x:0, v:0}, tL = 0, tR = 0, thumbRaf = 0, tLast = 0;
-  function measure(){ var b = mode === 'now' ? bNow : bAfter; tL = b.offsetLeft; tR = b.offsetLeft + b.offsetWidth; }
-  function drawThumb(){
-    var w = Math.max(eR.x - eL.x, 0), rest = tR - tL || w;
-    var stretch = Math.max(0, w - rest) / Math.max(rest, 1);
-    var sy = 1 - Math.min(0.22, stretch * 0.35);
-    thumb.style.width = w.toFixed(2) + 'px';
-    thumb.style.transform = 'translateX(' + eL.x.toFixed(2) + 'px) scaleY(' + sy.toFixed(3) + ')';
-  }
-  function snapThumb(){ measure(); eL.x = tL; eR.x = tR; eL.v = eR.v = 0; drawThumb(); }
-  function animThumb(now){
-    var dt = Math.min((now - tLast) / 1000, 0.032); tLast = now;
-    var right = (tL + tR) / 2 > (eL.x + eR.x) / 2;
-    var lead = right ? eR : eL, trail = right ? eL : eR, lt = right ? tR : tL, tt = right ? tL : tR;
-    lead.v += ((lt - lead.x) * 340 - lead.v * 24) * dt; lead.x += lead.v * dt;
-    trail.v += ((tt - trail.x) * 120 - trail.v * 15) * dt; trail.x += trail.v * dt;
-    drawThumb();
-    var done = Math.abs(eL.x - tL) + Math.abs(eR.x - tR) < 0.3 && Math.abs(eL.v) + Math.abs(eR.v) < 2;
-    if (done) { snapThumb(); thumbRaf = 0; } else thumbRaf = requestAnimationFrame(animThumb);
-  }
-  function moveThumb(){
-    measure();
-    if (reduced) { snapThumb(); return; }
-    if (!thumbRaf) { tLast = performance.now(); thumbRaf = requestAnimationFrame(animThumb); }
-  }
+  function placeThumb(){ var btn = mode === 'now' ? bNow : bAfter; thumb.style.width = btn.offsetWidth + 'px'; thumb.style.transform = 'translateX(' + btn.offsetLeft + 'px)'; }
+  function snapThumb(){ thumb.classList.remove('anim'); placeThumb(); }
+  function moveThumb(){ if (!reduced) thumb.classList.add('anim'); placeThumb(); }
   snapThumb();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(snapThumb);
   window.addEventListener('resize', snapThumb);
