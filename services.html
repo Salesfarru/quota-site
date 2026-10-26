@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <script>if(/\.html$/.test(location.pathname)){history.replaceState(null,"",location.pathname.replace(/index\.html$/,"").replace(/\.html$/,"")+location.search+location.hash)}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Услуги: аудит продаж, CRM, скрипты, KPI — Quota</title>
-<meta name="description" content="Услуги Quota: диагностика воронки продаж, настройка CRM, скрипты и обучение менеджеров, KPI и контроль. Ташкент.">
+<title>Услуги: аудит продаж, скрипты, KPI — Quota</title>
+<meta name="description" content="Услуги Quota: диагностика воронки продаж, скрипты и обучение менеджеров, KPI и мотивация, сопровождение отдела продаж. Сроки и цены. Ташкент.">
 <link rel="canonical" href="https://quota.uz/services">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#070D1C">
+<meta name="theme-color" content="#070B14">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -18,86 +18,218 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Quota">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Услуги: аудит продаж, CRM, скрипты, KPI — Quota">
-<meta property="og:description" content="Услуги Quota: диагностика воронки продаж, настройка CRM, скрипты и обучение менеджеров, KPI и контроль. Ташкент.">
+<meta property="og:title" content="Услуги: аудит продаж, скрипты, KPI — Quota">
+<meta property="og:description" content="Услуги Quota: диагностика воронки продаж, скрипты и обучение менеджеров, KPI и мотивация, сопровождение отдела продаж. Сроки и цены. Ташкент.">
 <meta property="og:url" content="https://quota.uz/services">
 <meta property="og:image" content="https://quota.uz/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Услуги: аудит продаж, CRM, скрипты, KPI — Quota">
-<meta name="twitter:description" content="Услуги Quota: диагностика воронки продаж, настройка CRM, скрипты и обучение менеджеров, KPI и контроль. Ташкент.">
+<meta name="twitter:title" content="Услуги: аудит продаж, скрипты, KPI — Quota">
+<meta name="twitter:description" content="Услуги Quota: диагностика воронки продаж, скрипты и обучение менеджеров, KPI и мотивация, сопровождение отдела продаж. Сроки и цены. Ташкент.">
 <meta name="twitter:image" content="https://quota.uz/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","name":"Диагностика продаж","description":"Разбираем воронку, CRM и звонки. Вы получаете отчёт с потерями в сумах и план исправлений.","url":"https://quota.uz/services#diagnostic","provider":{"@type":"ProfessionalService","name":"Quota","url":"https://quota.uz/"},"areaServed":{"@type":"Country","name":"Uzbekistan"},"offers":{"@type":"Offer","priceCurrency":"UZS","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"UZS","minPrice":4000000,"valueAddedTaxIncluded":false}}},{"@type":"Service","name":"Внедрение","description":"Настраиваем CRM, скрипты, KPI и мотивацию, обучаем руководителя и менеджеров.","url":"https://quota.uz/services#implementation","provider":{"@type":"ProfessionalService","name":"Quota","url":"https://quota.uz/"},"areaServed":{"@type":"Country","name":"Uzbekistan"},"offers":{"@type":"Offer","priceCurrency":"UZS","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"UZS","minPrice":15000000,"valueAddedTaxIncluded":false}}},{"@type":"Service","name":"Сопровождение","description":"Каждый месяц смотрим метрики, разбираем звонки и корректируем процесс.","url":"https://quota.uz/services#support","provider":{"@type":"ProfessionalService","name":"Quota","url":"https://quota.uz/"},"areaServed":{"@type":"Country","name":"Uzbekistan"},"offers":{"@type":"Offer","priceCurrency":"UZS","priceSpecification":{"@type":"PriceSpecification","priceCurrency":"UZS","minPrice":6000000,"valueAddedTaxIncluded":false,"unitText":"MONTH"}}}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>try{var t=localStorage.getItem('quota-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "name": "Диагностика продаж", "description": "Анализ воронки, звонков и переписок, «тайный покупатель», расчёт потерь в сумах и план исправлений на 30 дней. Срок 5–7 дней.", "url": "https://quota.uz/services#diagnostic", "provider": {"@id": "https://quota.uz/#org"}, "areaServed": "Uzbekistan", "offers": {"@type": "Offer", "priceCurrency": "UZS", "price": 4000000, "description": "от 4 млн сум, без НДС"}}, {"@type": "Service", "name": "Внедрение", "description": "Скрипты и работа с возражениями, KPI и мотивация, воронка в CRM, структура отдела, регламенты и обучение. Срок 2–6 недель.", "url": "https://quota.uz/services#implementation", "provider": {"@id": "https://quota.uz/#org"}, "areaServed": "Uzbekistan", "offers": {"@type": "Offer", "priceCurrency": "UZS", "price": 15000000, "description": "от 15 млн сум, без НДС"}}, {"@type": "Service", "name": "Сопровождение", "description": "Ежемесячный отчёт по метрикам, разбор звонков, корректировка скриптов и KPI.", "url": "https://quota.uz/services#support", "provider": {"@id": "https://quota.uz/#org"}, "areaServed": "Uzbekistan", "offers": {"@type": "Offer", "priceCurrency": "UZS", "price": 6000000, "description": "от 6 млн сум в месяц, без НДС"}}, {"@type": "ProfessionalService", "@id": "https://quota.uz/#org", "name": "Quota", "url": "https://quota.uz/", "logo": "https://quota.uz/icon-512.png", "image": "https://quota.uz/og-image.png", "description": "Аудит отдела продаж в Ташкенте: находим потери в воронке, разбираем звонки, выстраиваем скрипты, KPI и контроль. Считаем потери в сумах. Мини-аудит от Quota.", "email": "info@quota.uz", "telephone": "+998935546575", "areaServed": "Uzbekistan", "address": {"@type": "PostalAddress", "addressLocality": "Ташкент", "addressCountry": "UZ"}, "sameAs": ["https://t.me/quota_uz", "https://www.instagram.com/quota.uz"]}]}</script>
 </head>
 <body>
-<div id="site-header"></div>
+<div class="intro" id="intro" aria-hidden="true"><div class="bgl"></div><canvas id="intro-c"></canvas><span class="holo" id="holo" data-text="QUOTA">QUOTA</span></div>
+<script>
+(function(){
+  var el = document.getElementById('intro');
+  var docEl = document.documentElement;
+  try { if (sessionStorage.getItem('quota-intro')) { el.remove(); return; } sessionStorage.setItem('quota-intro', '1'); } catch (e) {}
+  docEl.classList.add('intro-on', 'intro-run');
+  var c = document.getElementById('intro-c'), holo = document.getElementById('holo');
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var gone = false;
+  function cleanup(){ if (el.parentNode) el.remove(); docEl.classList.remove('intro-on'); setTimeout(function(){ docEl.classList.remove('intro-run'); }, 1400); }
+  function finish(){ if (gone) return; gone = true; el.classList.add('out'); docEl.classList.remove('intro-on'); setTimeout(cleanup, 1200); }
+  setTimeout(cleanup, 5600);
+  if (reduced || !c.getContext) { holo.classList.add('show'); setTimeout(finish, 1100); return; }
+
+  function hex(v){ v = (v || '').trim().replace('#', ''); if (v.length === 3) v = v.replace(/./g, '$&$&'); var n = parseInt(v || '7ca3ff', 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+  function mix(a, b, k){ return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k]; }
+
+  var started = false;
+  function go(){
+    if (started) return; started = true;
+    var cr = c.getBoundingClientRect(), W = cr.width, H = cr.height, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = W * dpr; c.height = H * dpr;
+    var ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
+    var cs = getComputedStyle(holo), fs = parseFloat(cs.fontSize), r = holo.getBoundingClientRect();
+    var pad = 24, ow = Math.ceil(r.width + pad * 2), oh = Math.ceil(r.height + pad * 2);
+    var off = document.createElement('canvas'); off.width = ow; off.height = oh;
+    var o = off.getContext('2d');
+    o.font = cs.fontWeight + ' ' + fs + 'px ' + cs.fontFamily; o.textAlign = 'left'; o.textBaseline = 'alphabetic'; o.fillStyle = '#fff';
+    var mt = o.measureText('QUOTA'), asc = mt.fontBoundingBoxAscent, desc = mt.fontBoundingBoxDescent;
+    var base = (asc && desc) ? pad + (r.height - (asc + desc)) / 2 + asc : pad + r.height / 2 + (mt.actualBoundingBoxAscent - mt.actualBoundingBoxDescent) / 2;
+    o.fillText('QUOTA', pad + (r.width - mt.width) / 2, base);
+    var data = o.getImageData(0, 0, ow, oh).data;
+    var cell = Math.max(3, Math.round(fs / 50)), sq = cell * 0.7, half = cell >> 1;
+    var root = getComputedStyle(document.documentElement);
+    var A = hex(root.getPropertyValue('--holo-a')), B = hex(root.getPropertyValue('--holo-b')), C = hex(root.getPropertyValue('--holo-c'));
+    var dark = (function(){ var bg = hex(root.getPropertyValue('--bg')); return bg[0] + bg[1] + bg[2] < 380; })();
+    var pts = [], ox = r.left - cr.left - pad, oy = r.top - cr.top - pad;
+    for (var y = 0; y < oh; y += cell) for (var x = 0; x < ow; x += cell) {
+      var i = ((y + half) * ow + x + half) * 4;
+      if (data[i + 3] > 110) {
+        var k = x / ow, col = k < .5 ? mix(A, B, k * 2) : mix(B, C, (k - .5) * 2);
+        var sx, sy;
+        if (Math.random() < .55) { sx = Math.random() * W; sy = Math.random() * H; }
+        else { var ang = Math.random() * Math.PI * 2, d = 60 + Math.random() * 320; sx = ox + x + Math.cos(ang) * d; sy = oy + y + Math.sin(ang) * d * .6; }
+        pts.push({tx:ox + x, ty:oy + y, sx:sx, sy:sy,
+          delay:k * .75 + Math.random() * .45, f:Math.random() * 10,
+          col:'rgb(' + (col[0] | 0) + ',' + (col[1] | 0) + ',' + (col[2] | 0) + ')'});
+      }
+    }
+    var amb = [], cx0 = ox + ow / 2, cy0 = oy + oh / 2, nA = Math.min(900, Math.round(W * H / 1400));
+    for (var q = 0; q < nA; q++) {
+      var ax = Math.random() * W, ay = Math.random() * H, kk = Math.min(1, Math.max(0, (ax - ox) / ow));
+      var colA = kk < .5 ? mix(A, B, kk * 2) : mix(B, C, (kk - .5) * 2);
+      amb.push({x:ax, y:ay, vx:(cx0 - ax) * (.12 + Math.random() * .2), vy:(cy0 - ay) * (.12 + Math.random() * .2),
+        d:Math.random() * 1.1, life:.9 + Math.random() * 1.1, s:sq * (.5 + Math.random() * .6), f:Math.random() * 10,
+        col:'rgb(' + (colA[0] | 0) + ',' + (colA[1] | 0) + ',' + (colA[2] | 0) + ')'});
+    }
+    ctx.globalCompositeOperation = dark ? 'lighter' : 'source-over';
+    var T0 = performance.now(), IN = .7, SHOW = 1.75, FADE0 = 2.05, FADE1 = 2.7, END = 2.95;
+    function frame(now){
+      var t = (now - T0) / 1000;
+      ctx.clearRect(0, 0, W, H);
+      var fade = t < FADE0 ? 1 : Math.max(0, 1 - (t - FADE0) / (FADE1 - FADE0));
+      for (var m = 0; m < amb.length; m++) {
+        var a = amb[m], at = t - a.d;
+        if (at <= 0 || at > a.life) continue;
+        var u = at / a.life, env = Math.sin(u * Math.PI);
+        ctx.globalAlpha = env * (.25 + .35 * Math.abs(Math.sin((t + a.f) * 22))) * fade * (dark ? .5 : .55);
+        ctx.fillStyle = a.col;
+        ctx.fillRect(a.x + a.vx * at, a.y + a.vy * at, a.s, a.s);
+      }
+      for (var n = 0; n < pts.length; n++) {
+        var p = pts[n], lt = (t - p.delay) / IN;
+        if (lt <= 0) continue;
+        var e = lt >= 1 ? 1 : 1 - Math.pow(1 - lt, 3);
+        var flick = lt < 1 ? .35 + .65 * Math.abs(Math.sin((t + p.f) * 34)) : .78 + .22 * Math.sin(t * 7 + p.f);
+        ctx.globalAlpha = Math.min(1, lt * 1.6) * flick * fade * (dark ? .62 : .85);
+        ctx.fillStyle = p.col;
+        var s = sq * (.5 + .5 * e);
+        ctx.fillRect(p.sx + (p.tx - p.sx) * e, p.sy + (p.ty - p.sy) * e, s, s);
+      }
+      if (t > SHOW) holo.classList.add('show');
+      if (t < FADE1) requestAnimationFrame(frame); else ctx.clearRect(0, 0, W, H);
+      if (t > END) finish();
+    }
+    requestAnimationFrame(frame);
+    setTimeout(finish, END * 1000);
+  }
+  var ready = document.fonts && document.fonts.load ? document.fonts.load('800 100px Manrope') : Promise.resolve();
+  Promise.race([ready, new Promise(function(res){ setTimeout(res, 600); })]).then(go, go);
+})();
+</script>
+<div class="spot" id="spot" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="Quota, на главную">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect class="mk" width="32" height="32" rx="7"/><rect class="mk-in" x="7" y="17" width="4.5" height="8" rx="1.2"/><rect class="mk-in" x="13.75" y="12" width="4.5" height="13" rx="1.2"/><rect class="mk-in" x="20.5" y="7" width="4.5" height="18" rx="1.2"/></svg>
+      <b>quota</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="/services" aria-current="page">Услуги</a>
+      <a href="/calculator">Калькулятор</a>
+      <a href="/about">О нас</a>
+      <a href="/faq">Вопросы</a>
+      <a href="/contacts">Контакты</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button class="iconbtn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Язык: русский" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <span class="lang-code" aria-hidden="true">RU</span>
+      </button>
+      <ul class="lang-menu" id="lang-menu"><li><button type="button" data-lang="ru" aria-label="Русский">RU</button></li><li><button type="button" data-lang="uz" aria-label="Oʻzbekcha">UZ</button></li><li><button type="button" data-lang="en" aria-label="English">EN</button></li></ul>
+    </div>
+    <button class="iconbtn theme" id="theme" type="button" aria-label="Сменить тему">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <a class="btn sm" href="https://t.me/quota_uz">Мини-аудит</a>
+    <button class="iconbtn burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
 
 <main>
-  <div class="phero"><div class="wrap">
-    <h1 data-i18n="svp_h">Услуги</h1>
-    <p class="lead" data-i18n="svp_lead">От диагноза до стабильных продаж. Начните с диагностики, остальное подключайте, когда станет понятна картина.</p>
-  </div></div>
-
-  <section class="first">
+<div class="view">
+  <div class="glow-top">
     <div class="wrap">
-      <article class="sblock" id="diagnostic">
-        <div class="l">
-          <h2 data-i18n="sv1h">Диагностика продаж</h2>
-          <div><h4 data-i18n="lab_for">Для кого</h4><p class="muted" data-i18n="sv1for">Компании, у которых есть заявки, но продажи не растут и непонятно, почему.</p></div>
-          <div class="meta"><div><span data-i18n="lab_time">Срок</span><b data-i18n="sv1t">5–7 дней</b></div><div><span data-i18n="lab_price">Стоимость</span><b data-i18n="sv1pr">от 4 млн сум</b></div></div>
-        </div>
-        <div class="r">
-          <div><h4 data-i18n="lab_inc">Что входит</h4><ul class="ticks" data-i18n-list="sv1inc"><li>Анализ воронки и данных CRM</li><li>Прослушивание звонков и разбор переписок</li><li>«Тайный покупатель»</li><li>Интервью с менеджерами и руководителем отдела</li><li>Расчёт потерь в сумах по каждому этапу</li></ul></div>
-          <div><h4 data-i18n="lab_res">Что вы получите</h4><ul class="ticks" data-i18n-list="sv1res"><li>Отчёт с потерями и их причинами</li><li>План исправлений на 30 дней</li><li>Коммерческое предложение на внедрение</li></ul></div>
-        </div>
-      </article>
-
-      <article class="sblock" id="implementation">
-        <div class="l">
-          <h2 data-i18n="sv2h">Внедрение</h2>
-          <div><h4 data-i18n="lab_for">Для кого</h4><p class="muted" data-i18n="sv2for">Компании, которые готовы менять процесс и хотят, чтобы он работал без постоянного контроля владельца.</p></div>
-          <div class="meta"><div><span data-i18n="lab_time">Срок</span><b data-i18n="sv2t">2–6 недель</b></div><div><span data-i18n="lab_price">Стоимость</span><b data-i18n="sv2pr">от 15 млн сум</b></div></div>
-        </div>
-        <div class="r">
-          <div><h4 data-i18n="lab_inc">Что входит</h4><ul class="ticks" data-i18n-list="sv2inc"><li>Настройка CRM и воронки (Bitrix24, amoCRM)</li><li>Скрипты звонков и работа с возражениями</li><li>KPI и система мотивации менеджеров</li><li>Структура отдела продаж и помощь в найме</li><li>Регламенты и контрольные отчёты</li><li>Обучение руководителя и менеджеров</li></ul></div>
-          <div><h4 data-i18n="lab_res">Что вы получите</h4><ul class="ticks" data-i18n-list="sv2res"><li>Работающая система продаж и документы к ней</li><li>Менеджеры, обученные по скриптам</li><li>Отчёты, по которым виден результат</li></ul></div>
-        </div>
-      </article>
-
-      <article class="sblock" id="support">
-        <div class="l">
-          <h2 data-i18n="sv3h">Сопровождение</h2>
-          <div><h4 data-i18n="lab_for">Для кого</h4><p class="muted" data-i18n="sv3for">Компании, которые внедрили изменения и хотят закрепить результат.</p></div>
-          <div class="meta"><div><span data-i18n="lab_time">Срок</span><b data-i18n="sv3t">ежемесячно</b></div><div><span data-i18n="lab_price">Стоимость</span><b data-i18n="sv3pr">от 6 млн сум в месяц</b></div></div>
-        </div>
-        <div class="r">
-          <div><h4 data-i18n="lab_inc">Что входит</h4><ul class="ticks" data-i18n-list="sv3inc"><li>Ежемесячный отчёт по метрикам</li><li>Разбор записей звонков</li><li>Корректировка скриптов и KPI</li><li>Консультации для руководителя отдела</li></ul></div>
-          <div><h4 data-i18n="lab_res">Что вы получите</h4><ul class="ticks" data-i18n-list="sv3res"><li>Стабильные показатели воронки</li><li>Раннее выявление новых потерь</li></ul></div>
-        </div>
-      </article>
-
-      <div class="pricenote"><h3 data-i18n="svp_price_h">Как формируется цена</h3><p data-i18n="svp_price_p">Стоимость зависит от размера отдела продаж, числа каналов и объёма данных. Цены указаны без НДС. Для внедрения можно привязать часть оплаты к росту продаж: условия обсуждаем заранее и фиксируем в договоре.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="band">
-        <div><h2 data-i18n="h_cta_h">Начнём с мини-аудита</h2><p data-i18n="h_cta_p">Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.</p></div>
-        <div class="cta"><a class="btn" data-tg href="#" data-i18n="cta_tg">Написать в Telegram</a><a class="btn line" href="/calculator" data-i18n="nav_calc">Калькулятор</a></div>
+      <div class="phero center">
+        <p class="badge">Услуги</p>
+        <h1 class="h1">От диагноза до стабильных продаж</h1>
+        <p class="lead">Начните с диагностики: она покажет, где именно теряются деньги. Внедрение и сопровождение подключайте, когда картина станет понятна.</p>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="wrap">
+    <section class="sec" style="padding-top:88px">
+      <div class="split">
+        <div class="copy">
+          <p class="eyebrow">Диагностика</p>
+          <h2 class="h2">Находим провалы, которых не видно в отчётах</h2>
+          <p class="lead">Проходим по каждому этапу: скорость ответа, звонки, КП, повторные касания. Каждую найденную проблему переводим в сумы, чтобы было ясно, что чинить первым.</p>
+          <ul class="pts">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Отчёт с потерями по каждому этапу воронки</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>Причины потерь, подтверждённые звонками и перепиской</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>План исправлений на 30 дней</li>
+          </ul>
+        </div>
+        <div class="scene">
+          <div class="stage md" id="lens-stage">
+            <canvas id="lens-canvas" aria-label="Стеклянная лупа движется над столбчатым графиком продаж и выделяет красным два провала"></canvas>
+            <div class="tag loss" id="lens-dip0" style="opacity:0"><span>Нет ответа за час</span><b>−21 млн сум в месяц</b></div>
+            <div class="tag loss" id="lens-dip1" style="opacity:0"><span>КП без повторного контакта</span><b>−14 млн сум в месяц</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-head center"><p class="eyebrow">Состав работ</p><h2 class="h2">Что входит в каждый шаг</h2><p class="lead">Шаги можно брать по одному или вместе. В таблице видно, что делаем на каждом.</p></div>
+      <div class="steps3">
+        <div class="card" id="diagnostic"><p class="eyebrow">Шаг 1</p><h3>Диагностика</h3><p>Для компаний, у которых есть заявки, но продажи не растут и непонятно почему.</p><div class="meta"><div><span>Срок</span><b>5–7 дней</b></div><div><span>Стоимость</span><b>от 4 млн сум</b></div></div></div>
+        <div class="card" id="implementation"><p class="eyebrow">Шаг 2</p><h3>Внедрение</h3><p>Для тех, кто готов менять процесс и хочет, чтобы он работал без постоянного контроля владельца.</p><div class="meta"><div><span>Срок</span><b>2–6 недель</b></div><div><span>Стоимость</span><b>от 15 млн сум</b></div></div></div>
+        <div class="card" id="support"><p class="eyebrow">Шаг 3</p><h3>Сопровождение</h3><p>Для тех, кто внедрил изменения и хочет закрепить результат.</p><div class="meta"><div><span>Срок</span><b>ежемесячно</b></div><div><span>Стоимость</span><b>от 6 млн сум / мес</b></div></div></div>
+      </div>
+      <div class="card tbl-wrap" role="region" aria-label="Сравнение шагов" tabindex="0"><table class="tbl"><thead><tr><th scope="col">Что делаем</th><th scope="col">Шаг 1<b>Диагностика</b></th><th scope="col">Шаг 2<b>Внедрение</b></th><th scope="col">Шаг 3<b>Сопровождение</b></th></tr></thead><tbody><tr class="grp"><td colspan="4">Разбираем</td></tr><tr><td>Анализ воронки и заявок</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td></tr><tr><td>Прослушивание звонков и переписок</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td></tr><tr><td>«Тайный покупатель»</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Интервью с менеджерами и руководителем</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Расчёт потерь в сумах</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-part">каждый месяц</span></td></tr><tr class="grp"><td colspan="4">Меняем</td></tr><tr><td>Скрипты и работа с возражениями</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-part">корректировка</span></td></tr><tr><td>KPI и мотивация менеджеров</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-part">корректировка</span></td></tr><tr><td>Воронка в CRM: этапы, поля, отчёты</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Правила работы с заявкой</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Структура отдела и помощь в найме</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Регламенты и контрольные отчёты</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Обучение руководителя и менеджеров</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-part">консультации</span></td></tr><tr class="grp"><td colspan="4">Вы получаете</td></tr><tr><td>Отчёт с потерями и их причинами</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-part">ежемесячный</span></td></tr><tr><td>План исправлений на 30 дней</td><td data-label="Диагностика"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Работающую систему продаж и документы</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Менеджеров, обученных по скриптам</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td><td data-label="Сопровождение"><span class="c-no" role="img" aria-label="не входит">—</span></td></tr><tr><td>Раннее выявление новых потерь</td><td data-label="Диагностика"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Внедрение"><span class="c-no" role="img" aria-label="не входит">—</span></td><td data-label="Сопровождение"><span class="c-yes" role="img" aria-label="входит"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg></span></td></tr><tr class="grp"><td colspan="4">Условия</td></tr><tr class="sum"><td>Срок</td><td data-label="Диагностика">5–7 дней</td><td data-label="Внедрение">2–6 недель</td><td data-label="Сопровождение">ежемесячно</td></tr><tr class="sum"><td>Стоимость</td><td data-label="Диагностика">от 4 млн сум</td><td data-label="Внедрение">от 15 млн сум</td><td data-label="Сопровождение">от 6 млн / мес</td></tr></tbody></table></div>
+      <div class="note">
+        <h3 style="font-size:18px">Как формируется цена</h3>
+        <p>Стоимость зависит от размера отдела продаж, числа каналов и объёма данных. Цены без НДС. Часть оплаты за внедрение можно привязать к росту продаж: условия обсуждаем заранее и фиксируем в договоре.</p>
+      </div>
+    </section>
+    <section class="sec"><div class="band"><p class="eyebrow">Следующий шаг</p><h2 class="h2" style="font-size:clamp(30px,3.6vw,44px)">Начнём с мини-аудита</h2><p class="lead">Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.</p><div class="btns"><a class="btn" href="https://t.me/quota_uz">Написать в Telegram</a><a class="btn ghost" href="/contacts">Все контакты</a></div></div></section>
+  </div>
+</div>
 </main>
 
-<div id="site-footer"><footer class="bottom"><div class="wrap"><div class="fgrid"><div><a class="logo" href="/" aria-label="Quota" style="color:var(--fg)">Quota</a><p style="margin-top:12px;max-width:40ch">Продажи без потерь: диагностика, CRM, скрипты и KPI для отделов продаж в Ташкенте.</p></div><div><h4>Меню</h4><ul><li><a href="/">Главная</a></li><li><a href="/services">Услуги</a></li><li><a href="/calculator">Калькулятор</a></li><li><a href="/about">О нас</a></li><li><a href="/faq">Вопросы</a></li><li><a href="/contacts">Контакты</a></li></ul></div><div><h4>Контакты</h4><ul><li><a href="https://t.me/quota_uz">Telegram</a></li><li><a href="https://www.instagram.com/quota.uz">Instagram</a></li><li><a href="tel:+998935546575">+998 93 554 65 75</a></li><li><a href="mailto:info@quota.uz">info@quota.uz</a></li></ul></div></div><div class="fcopy">© 2026 Quota</div></div></footer></div>
-<script>window.PAGE="services";</script>
-<script src="i18n.js"></script>
-<script src="app.js"></script>
+<footer class="foot-site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="/" style="color:var(--fg)"><b>quota</b></a><p style="margin-top:12px;max-width:40ch">Продажи без потерь: диагностика, скрипты, KPI и обучение для отделов продаж в Ташкенте.</p></div>
+      <div><h4>Разделы</h4><ul>
+        <li><a href="/services">Услуги</a></li><li><a href="/calculator">Калькулятор</a></li><li><a href="/about">О нас</a></li><li><a href="/faq">Вопросы</a></li><li><a href="/contacts">Контакты</a></li>
+      </ul></div>
+      <div><h4>Связь</h4><ul>
+        <li><a href="https://t.me/quota_uz">Telegram</a></li><li><a href="https://www.instagram.com/quota.uz">Instagram</a></li><li class="mono">+998 93 554 65 75</li><li class="mono">info@quota.uz</li>
+      </ul></div>
+    </div>
+    <div class="fcopy">© 2026 Quota · Ташкент</div>
+  </div>
+</footer>
+<script src="/i18n.js" defer></script>
+<script src="/app.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js" defer></script>
+<script src="/scenes.js" defer></script>
 </body>
 </html>

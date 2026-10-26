@@ -1,138 +1,134 @@
+/* Quota — site behaviour: menu, theme, languages, cursor light, calculator, copy buttons. */
 (function(){
-var CONTACT = {
-  telegram: "https://t.me/quota_uz", telegramName: "@quota_uz",
-  instagram: "https://www.instagram.com/quota.uz", instagramName: "@quota.uz",
-  phoneHref: "tel:+998935546575", phone: "+998 93 554 65 75",
-  email: "info@quota.uz"
-};
-var PAGE = window.PAGE || "home";
-var NAV = [["home","/","nav_home"],["services","/services","nav_services"],["calc","/calculator","nav_calc"],["about","/about","nav_about"],["faq","/faq","nav_faq"],["contacts","/contacts","nav_contacts"]];
-var lang = "ru";
-try {
-  var saved = localStorage.getItem("quota_lang");
-  if (saved && T[saved]) lang = saved;
-  else { var nl = (navigator.language || "").slice(0,2).toLowerCase(); if (T[nl]) lang = nl; }
-} catch (e) {}
-
-function t(k){ var d = T[lang]; return d[k] !== undefined ? d[k] : (T.ru[k] !== undefined ? T.ru[k] : k); }
-
-var LOGO = '<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--accent)"/><stop offset="1" stop-color="var(--accent2)"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><rect x="7" y="17" width="4.5" height="8" rx="1.5" fill="var(--accent-ink)"/><rect x="13.75" y="12" width="4.5" height="13" rx="1.5" fill="var(--accent-ink)"/><rect x="20.5" y="7" width="4.5" height="18" rx="1.5" fill="var(--accent-ink)"/></svg>';
-
-function buildLayout(){
-  var h = document.getElementById("site-header");
-  if (h){
-    var links = NAV.map(function(n){
-      return '<a href="' + n[1] + '"' + (n[0] === PAGE ? ' aria-current="page"' : '') + ' data-i18n="' + n[2] + '"></a>';
-    }).join("");
-    h.innerHTML =
-      '<header class="top"><div class="wrap bar">' +
-      '<a class="logo" href="/" aria-label="Quota">' + LOGO + 'Quota</a>' +
-      '<nav class="links" id="links" aria-label="Main">' + links + '</nav>' +
-      '<div class="right">' +
-      '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="en">EN</button></div>' +
-      '<a class="btn sm hide-s" data-tg href="/contacts" data-i18n="nav_cta"></a>' +
-      '<button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="links" data-i18n-aria="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>' +
-      '</div></div></header>';
-  }
-  var f = document.getElementById("site-footer");
-  if (f){
-    var fl = NAV.map(function(n){ return '<li><a href="' + n[1] + '" data-i18n="' + n[2] + '"></a></li>'; }).join("");
-    f.innerHTML =
-      '<footer class="bottom"><div class="wrap"><div class="fgrid">' +
-      '<div><a class="logo" href="/" aria-label="Quota" style="color:var(--fg)">' + LOGO.replace('id="lg"','id="lg2"').replace('url(#lg)','url(#lg2)') + 'Quota</a><p style="margin-top:12px;max-width:40ch" data-i18n="foot_tag"></p></div>' +
-      '<div><h4 data-i18n="foot_nav"></h4><ul>' + fl + '</ul></div>' +
-      '<div><h4 data-i18n="foot_contact"></h4><ul>' +
-      '<li><a href="' + CONTACT.telegram + '" target="_blank" rel="noopener">Telegram</a></li>' +
-      '<li><a href="' + CONTACT.instagram + '" target="_blank" rel="noopener">Instagram</a></li>' +
-      '<li>' + CONTACT.phone + '</li>' +
-      '<li><a href="mailto:' + CONTACT.email + '">' + CONTACT.email + '</a></li></ul></div></div>' +
-      '<div class="fcopy">© 2026 Quota</div></div></footer>';
-  }
-  var burger = document.getElementById("burger");
-  var ln = document.getElementById("links");
-  if (burger && ln){
-    burger.addEventListener("click", function(){
-      var o = ln.classList.toggle("open");
-      burger.setAttribute("aria-expanded", o ? "true" : "false");
-    });
-    ln.addEventListener("click", function(e){ if (e.target.tagName === "A") { ln.classList.remove("open"); burger.setAttribute("aria-expanded","false"); } });
-  }
-  document.querySelectorAll(".lang button").forEach(function(b){
-    b.addEventListener("click", function(){
-      lang = b.dataset.lang;
-      try { localStorage.setItem("quota_lang", lang); } catch (e) {}
-      applyLang();
-    });
+  var LANG = 'ru';
+  var nav = document.getElementById('nav'), burger = document.getElementById('burger');
+  function closeMenu(){ nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+  burger.addEventListener('click', function(){
+    var open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open); burger.setAttribute('aria-expanded', String(open));
   });
-  document.querySelectorAll("[data-tg]").forEach(function(a){
-    if (a.getAttribute("href") === "#" || a.hasAttribute("data-ext")) { a.href = CONTACT.telegram; a.target = "_blank"; a.rel = "noopener"; }
+  nav.addEventListener('click', function(e){ if (e.target.closest('a')) closeMenu(); });
+
+  // Calculator
+  var $ = function(id){ return document.getElementById(id); };
+  var ids = ['q-leads', 'q-conv', 'q-check', 'q-up'];
+  var sum = function(n){ var s = Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, LANG === 'en' ? ',' : ' '); return LANG === 'en' ? 'UZS ' + s : s + (LANG === 'uz' ? ' soʻm' : ' сум'); };
+  function calc(){
+    var leads = +$('q-leads').value, conv = +$('q-conv').value, check = +$('q-check').value, up = +$('q-up').value;
+    var now = leads * conv / 100 * check, delta = now * up / 100;
+    $('v-leads').textContent = leads.toString().replace(/\B(?=(\d{3})+(?!\d))/g, LANG === 'en' ? ',' : ' ');
+    $('v-conv').textContent = (LANG === 'en' ? String(conv) : String(conv).replace('.', ',')) + '%';
+    $('v-check').textContent = sum(check);
+    $('v-up').textContent = '+' + up + '%';
+    $('o-month').textContent = sum(delta);
+    $('o-year').textContent = sum(delta * 12);
+    $('o-now').textContent = sum(now);
+    $('o-aft').textContent = sum(now + delta);
+    $('b-now').style.width = (100 / (1 + up / 100)).toFixed(1) + '%';
+  }
+  if ($('q-leads')) { ids.forEach(function(id){ $(id).addEventListener('input', calc); }); calc(); document.addEventListener('quota:lang', calc); }
+
+  // Theme toggle (explicit choice overrides the system setting)
+  var root = document.documentElement;
+  function systemDark(){ return !(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches); }
+  try { var saved = localStorage.getItem('quota-theme'); if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved); } catch (err) {}
+  $('theme').addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme') || (systemDark() ? 'dark' : 'light');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('quota-theme', next); } catch (err) {}
   });
-  document.querySelectorAll("[data-ig]").forEach(function(a){ a.href = CONTACT.instagram; a.target = "_blank"; a.rel = "noopener"; });
-}
 
-function fmt(n){ return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, lang === "en" ? "," : " "); }
-function money(n){ return lang === "en" ? "UZS " + fmt(n) : fmt(n) + " " + t("cur"); }
-
-function buildContacts(){
-  var cl = document.getElementById("cl");
-  if (!cl) return;
-  cl.textContent = "";
-  function row(label, node, copyText){
-    var d = document.createElement("div");
-    var s = document.createElement("span"); s.textContent = label; d.appendChild(s);
-    d.appendChild(node);
-    if (copyText){
-      var b = document.createElement("button"); b.type = "button"; b.className = "copy"; b.textContent = t("copy");
-      b.addEventListener("click", function(){
-        function ok(){ b.textContent = t("copied"); setTimeout(function(){ b.textContent = t("copy"); }, 1400); }
-        function pick(){ var r = document.createRange(); r.selectNodeContents(node); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); }
-        try { navigator.clipboard.writeText(copyText).then(ok, pick); } catch (e) { pick(); }
-      });
-      d.appendChild(b);
+  // Soft light that follows the cursor
+  var spot = $('spot');
+  if (spot) {
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var tx = innerWidth / 2, ty = innerHeight / 3, sx = tx, sy = ty, raf = 0, hideT = 0;
+    function place(){ spot.style.transform = 'translate3d(' + sx.toFixed(1) + 'px,' + sy.toFixed(1) + 'px,0)'; }
+    function draw(){
+      sx += (tx - sx) * 0.16; sy += (ty - sy) * 0.16; place();
+      raf = (Math.abs(tx - sx) + Math.abs(ty - sy) > 0.5) ? requestAnimationFrame(draw) : 0;
     }
-    cl.appendChild(d);
+    function aim(x, y, jump){
+      tx = x; ty = y; spot.classList.add('on');
+      if (still || jump) { sx = tx; sy = ty; place(); return; }
+      if (!raf) raf = requestAnimationFrame(draw);
+    }
+    // mouse / pen
+    window.addEventListener('pointermove', function(e){ if (e.pointerType !== 'touch') aim(e.clientX, e.clientY); }, {passive:true});
+    document.documentElement.addEventListener('pointerleave', function(){ spot.classList.remove('on'); });
+    // finger: the light follows the touch while scrolling, then fades out
+    function touch(e, jump){
+      var t = e.touches && e.touches[0]; if (!t) return;
+      clearTimeout(hideT); aim(t.clientX, t.clientY, jump);
+    }
+    window.addEventListener('touchstart', function(e){ touch(e, true); }, {passive:true});
+    window.addEventListener('touchmove', function(e){ touch(e, false); }, {passive:true});
+    window.addEventListener('touchend', function(){ clearTimeout(hideT); hideT = setTimeout(function(){ spot.classList.remove('on'); }, 450); }, {passive:true});
+    window.addEventListener('touchcancel', function(){ spot.classList.remove('on'); }, {passive:true});
   }
-  var a1 = document.createElement("a"); a1.href = CONTACT.telegram; a1.target = "_blank"; a1.rel = "noopener"; a1.textContent = CONTACT.telegramName; row("Telegram", a1);
-  var a2 = document.createElement("a"); a2.href = CONTACT.instagram; a2.target = "_blank"; a2.rel = "noopener"; a2.textContent = CONTACT.instagramName; row("Instagram", a2);
-  var a3 = document.createElement("a"); a3.href = CONTACT.phoneHref; a3.textContent = CONTACT.phone; row(t("l_phone"), a3, CONTACT.phone);
-  var a5 = document.createElement("a"); a5.href = "mailto:" + CONTACT.email; a5.textContent = CONTACT.email; row("Email", a5, CONTACT.email);
-  var b4 = document.createElement("b"); b4.textContent = t("city"); row(t("l_city"), b4);
-}
 
-function calc(){
-  var el = document.getElementById("leads");
-  if (!el) return;
-  var leads = parseFloat(el.value) || 0;
-  var conv = parseFloat(document.getElementById("conv").value) || 0;
-  var check = parseFloat(document.getElementById("check").value) || 0;
-  var up = parseFloat(document.getElementById("uplift").value) || 0;
-  document.getElementById("upv").textContent = up + "%";
-  var now = leads * conv / 100 * check, aft = now * (1 + up / 100), delta = aft - now;
-  document.getElementById("o-month").textContent = "+" + money(delta);
-  document.getElementById("o-year").textContent = "+" + money(delta * 12);
-  document.getElementById("o-now").textContent = money(now);
-  document.getElementById("o-aft").textContent = money(aft);
-  document.getElementById("b-aft").style.width = aft > 0 ? "100%" : "0";
-  document.getElementById("b-now").style.width = aft > 0 ? (now / aft * 100) + "%" : "0";
-}
+  // Languages: Russian is in the HTML; Uzbek and English come from i18n.js (Russian text -> [uz, en])
+  var DICT = window.QUOTA_I18N || {}, IDX = {uz:0, en:1}, ATTRS = ['aria-label', 'title', 'data-label'];
+  var orig = new WeakMap();
+  function norm(s){ return s.replace(/\s+/g, ' ').trim(); }
+  function tr(ru){
+    var k = norm(ru);
+    if (LANG === 'ru' || !k) return ru;
+    var v = DICT[k];
+    if (!v || !v[IDX[LANG]]) return ru;
+    return ru.match(/^\s*/)[0] + v[IDX[LANG]] + ru.match(/\s*$/)[0];
+  }
+  function L(ru){ return tr(ru); }
+  function applyLang(){
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {acceptNode:function(n){
+      var p = n.parentNode && n.parentNode.nodeName; return (p === 'SCRIPT' || p === 'STYLE') ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }});
+    var n;
+    while ((n = w.nextNode())) { if (!orig.has(n)) orig.set(n, n.nodeValue); n.nodeValue = tr(orig.get(n)); }
+    document.querySelectorAll('[aria-label],[title],[data-label]').forEach(function(el){
+      ATTRS.forEach(function(a){
+        if (!el.hasAttribute(a)) return;
+        var key = 'data-ru-' + a;
+        if (!el.hasAttribute(key)) el.setAttribute(key, el.getAttribute(a));
+        el.setAttribute(a, tr(el.getAttribute(key)));
+      });
+    });
+    var md = document.querySelector('meta[name="description"]');
+    if (md) { if (!md.hasAttribute('data-ru')) md.setAttribute('data-ru', md.content); md.content = tr(md.getAttribute('data-ru')); }
+    if (!document.documentElement.hasAttribute('data-ru-title')) document.documentElement.setAttribute('data-ru-title', document.title);
+    document.title = tr(document.documentElement.getAttribute('data-ru-title'));
+    document.documentElement.lang = LANG;
+    var code = document.querySelector('.lang-code'); if (code) code.textContent = LANG.toUpperCase();
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-current', String(b.getAttribute('data-lang') === LANG)); });
+    try { document.dispatchEvent(new Event('quota:lang')); } catch (err) {}
+  }
+  try {
+    var savedLang = localStorage.getItem('quota_lang');
+    if (savedLang === 'ru' || savedLang === 'uz' || savedLang === 'en') LANG = savedLang;
+  } catch (err) {}
+  if (LANG !== 'ru') applyLang(); else { var cd = document.querySelector('.lang-code'); if (cd) cd.textContent = 'RU'; document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-current', String(b.getAttribute('data-lang') === 'ru')); }); }
 
-function applyLang(){
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(function(el){ el.textContent = t(el.getAttribute("data-i18n")); });
-  document.querySelectorAll("[data-i18n-aria]").forEach(function(el){ el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
-  document.querySelectorAll("[data-i18n-list]").forEach(function(el){
-    var arr = t(el.getAttribute("data-i18n-list"));
-    el.textContent = "";
-    (Array.isArray(arr) ? arr : []).forEach(function(s){ var li = document.createElement("li"); li.textContent = s; el.appendChild(li); });
+  // Language menu
+  var lang = $('lang'), langBtn = $('lang-btn');
+  function setLang(open){ lang.classList.toggle('open', open); langBtn.setAttribute('aria-expanded', String(open)); }
+  langBtn.addEventListener('click', function(e){ e.stopPropagation(); setLang(!lang.classList.contains('open')); });
+  lang.querySelectorAll('[data-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      LANG = b.getAttribute('data-lang');
+      try { localStorage.setItem('quota_lang', LANG); } catch (err) {}
+      applyLang(); setLang(false);
+    });
   });
-  document.querySelectorAll(".cur").forEach(function(el){ el.textContent = t("cur"); });
-  document.querySelectorAll(".lang button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === lang ? "true" : "false"); });
-  var _pt = t("pt_" + PAGE); if (_pt && _pt.indexOf("pt_") !== 0) document.title = PAGE === "home" ? _pt : _pt + " · Quota";
-  buildContacts();
-  calc();
-}
+  document.addEventListener('click', function(e){ if (!lang.contains(e.target)) setLang(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && lang.classList.contains('open')) { setLang(false); langBtn.focus(); } });
 
-buildLayout();
-["leads","conv","check","uplift"].forEach(function(id){ var e = document.getElementById(id); if (e) e.addEventListener("input", calc); });
-applyLang();
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = $(btn.getAttribute('data-copy')), text = el.textContent.trim();
+      function done(){ btn.textContent = L('Скопировано'); setTimeout(function(){ btn.textContent = L('Копировать'); }, 1600); }
+      function select(){ var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = L('Выделено'); setTimeout(function(){ btn.textContent = L('Копировать'); }, 1600); }
+      try { navigator.clipboard.writeText(text).then(done, select); } catch (err) { select(); }
+    });
+  });
 })();

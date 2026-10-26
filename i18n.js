@@ -1,207 +1,1055 @@
-window.T = {
-ru:{
- nav_home:"Главная",nav_services:"Услуги",nav_calc:"Калькулятор",nav_about:"О нас",nav_contacts:"Контакты",nav_cta:"Написать",menu:"Меню",
- pt_home:"Quota — консалтинг по продажам в Ташкенте",pt_services:"Услуги",pt_calc:"Калькулятор потерь",pt_about:"О нас",pt_contacts:"Контакты",
- foot_tag:"Консалтинг по продажам в Ташкенте. Находим потери в воронке и устраняем их.",foot_nav:"Разделы",foot_contact:"Связаться",
- more:"Подробнее",cta_tg:"Написать в Telegram",cur:"сум",
- /* home */
- hero_h1:"Находим, где отдел продаж теряет деньги, и чиним это",
- hero_lead:"Проверяем воронку, звонки и CRM, считаем потери в сумах и настраиваем скрипты, KPI и контроль. Работаем в Ташкенте.",
- hero_cta1:"Заказать мини-аудит",hero_cta2:"Посчитать потери",
- rep_title:"Отчёт диагностики",rep_tag:"пример на условных данных",
- rep_r1:"Заявки без ответа дольше часа: 38%",rep_r1v:"−21 млн",rep_r2:"КП без повторного контакта: 54%",rep_r2v:"−14 млн",rep_r3:"Отказы без причины в CRM: 71%",rep_r3v:"не видно",rep_sum:"Утечка в месяц",rep_sumv:"≈ 35 млн сум",
- h_sv_h:"Что мы делаем",h_sv_p:"Три шага от диагноза до стабильных продаж. Можно остановиться после первого.",
- sv1h:"Диагностика продаж",sv1s:"Разбираем воронку, CRM и звонки. Вы получаете отчёт с потерями в сумах и план исправлений.",sv1pr:"от 4 млн сум",
- sv2h:"Внедрение",sv2s:"Настраиваем CRM, скрипты, KPI и мотивацию, обучаем руководителя и менеджеров.",sv2pr:"от 15 млн сум",
- sv3h:"Сопровождение",sv3s:"Каждый месяц смотрим метрики, разбираем звонки и корректируем процесс.",sv3pr:"от 6 млн сум в месяц",
- h_calc_h:"Сколько стоит утечка в вашей воронке",h_calc_p:"Введите заявки, конверсию и средний чек. Калькулятор покажет, сколько выручки можно вернуть.",h_calc_btn:"Открыть калькулятор",
- h_pr_h:"Как мы работаем",
- st1h:"Бриф и доступ",st1w:"1–2 дня",st1p:"Обсуждаем цели, подписываем NDA, получаем доступ к CRM, звонкам и отчётам.",
- st2h:"Диагностика",st2w:"5–7 дней",st2p:"Находим места потерь и считаем их в сумах. Показываем отчёт и план.",
- st3h:"Внедрение",st3w:"2–6 недель",st3p:"Меняем процесс вместе с вашей командой: скрипты, CRM, KPI, обучение.",
- st4h:"Сопровождение",st4w:"каждый месяц",st4p:"Отчёт по метрикам, разбор звонков, корректировки.",
- h_cta_h:"Начнём с мини-аудита",h_cta_p:"Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.",
- /* services */
- svp_h:"Услуги",svp_lead:"От диагноза до стабильных продаж. Начните с диагностики, остальное подключайте, когда станет понятна картина.",
- lab_for:"Для кого",lab_inc:"Что входит",lab_res:"Что вы получите",lab_time:"Срок",lab_price:"Стоимость",
- sv1for:"Компании, у которых есть заявки, но продажи не растут и непонятно, почему.",
- sv1inc:["Анализ воронки и данных CRM","Прослушивание звонков и разбор переписок","«Тайный покупатель»","Интервью с менеджерами и руководителем отдела","Расчёт потерь в сумах по каждому этапу"],
- sv1res:["Отчёт с потерями и их причинами","План исправлений на 30 дней","Коммерческое предложение на внедрение"],sv1t:"5–7 дней",
- sv2for:"Компании, которые готовы менять процесс и хотят, чтобы он работал без постоянного контроля владельца.",
- sv2inc:["Настройка CRM и воронки (Bitrix24, amoCRM)","Скрипты звонков и работа с возражениями","KPI и система мотивации менеджеров","Структура отдела продаж и помощь в найме","Регламенты и контрольные отчёты","Обучение руководителя и менеджеров"],
- sv2res:["Работающая система продаж и документы к ней","Менеджеры, обученные по скриптам","Отчёты, по которым виден результат"],sv2t:"2–6 недель",
- sv3for:"Компании, которые внедрили изменения и хотят закрепить результат.",
- sv3inc:["Ежемесячный отчёт по метрикам","Разбор записей звонков","Корректировка скриптов и KPI","Консультации для руководителя отдела"],
- sv3res:["Стабильные показатели воронки","Раннее выявление новых потерь"],sv3t:"ежемесячно",
- svp_price_h:"Как формируется цена",svp_price_p:"Стоимость зависит от размера отдела продаж, числа каналов и объёма данных. Цены указаны без НДС. Для внедрения можно привязать часть оплаты к росту продаж: условия обсуждаем заранее и фиксируем в договоре.",
- /* calculator */
- calcp_h:"Калькулятор потерь",calcp_lead:"Введите свои цифры. Это сценарий, а не прогноз.",
- c_leads:"Заявок в месяц",c_conv:"Из них доходит до оплаты, %",c_check:"Средний чек",c_uplift:"Рост конверсии после наведения порядка",
- c_extra:"Дополнительная выручка в месяц",c_year:"За год",c_now:"Сейчас",c_after:"После наведения порядка",
- c_note:"Расчёт показывает порядок величины. Реальный эффект мы измеряем на ваших данных в диагностике.",
- how_h:"Как читать результат",how1h:"Что считает калькулятор",how1p:"Заявки умножаются на долю оплат и на средний чек. Затем к выручке добавляется рост конверсии, который вы выбрали ползунком.",
- how2h:"Что дальше",how2p:"Какой рост реален именно у вас, показывает диагностика на ваших данных: звонках, CRM и заявках.",
- /* about */
- ab_h:"О Quota",ab_lead:"Мы помогаем компаниям в Узбекистане находить потери в продажах и закрывать их: от диагностики воронки до работающего отдела продаж.",
- pri_h:"Наш подход",
- pri1h:"Сначала цифры",pri1p:"Каждую проблему переводим в суммы, чтобы было видно, что чинить первым.",
- pri2h:"Меняем вместе с командой",pri2p:"Скрипты и KPI работают, только если ими пользуются менеджеры. Поэтому мы обучаем и сопровождаем.",
- pri3h:"Фиксируем результат",pri3p:"Договариваемся о метриках до старта и сверяем их каждый месяц.",
- chk_h:"Что мы проверяем в продажах",chk_p:"Путь клиента состоит из пяти шагов. На каждом бизнес теряет людей по своей причине.",
- s1:"Заявка",s2:"Первый контакт",s3:"Предложение",s4:"Сделка",s5:"Повторная продажа",
- l1h:"Теряем при ответе",l1:"Отвечают поздно, часть обращений не обрабатывается вовсе.",
- l2h:"Теряем в разговоре",l2:"Нет скрипта: менеджер не выявляет потребность и не ведёт к следующему шагу.",
- l3h:"Теряем на КП",l3:"КП уходит и «зависает»: нет напоминаний и работы с возражениями.",
- l4h:"Теряем в данных",l4:"CRM заполнена частично, неясно, где и почему срываются сделки.",
- l5h:"Теряем после оплаты",l5:"К клиенту не возвращаются, база не используется.",
- no_h:"С кем мы не работаем",no_p:"Так мы экономим время обеим сторонам.",
- no1h:"Без доступа к данным",no1p:"Без записей звонков и истории заявок мы гадаем, а не считаем.",
- no2h:"Без решения собственника",no2p:"Если менять процесс некому, отчёт останется лежать в папке.",
- no3h:"С обещанием результата за неделю",no3p:"Стабильный рост продаж занимает месяцы, мы говорим об этом сразу.",
- no4h:"Без заявок вообще",no4p:"Сначала нужен поток обращений, потом порядок в продажах.",
- /* contacts */
- ct_h:"Контакты",ct_lead:"Telegram — самый быстрый способ связаться. Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.",
- l_phone:"Телефон",l_city:"Город",city:"Ташкент",copy:"Копировать",copied:"Скопировано",
- faq_h:"Частые вопросы",
- q1:"У нас нет CRM. Можно начать?",a1:"Да. Диагностику проводим по звонкам, переписке, таблицам и опросу менеджеров. CRM настроим на этапе внедрения.",
- q2:"Как вы работаете с нашими данными?",a2:"Перед началом подписываем соглашение о конфиденциальности. Доступ нужен только к тем системам и в том объёме, который требуется для диагностики.",
- q3:"Сколько времени до первого результата?",a3:"Отчёт с потерями вы получаете за 5–7 дней. Изменения в воронке обычно видны в первые недели внедрения, но срок зависит от вашего бизнеса.",
- q4:"Можно заказать только диагностику?",a4:"Да. Отчёт и план исправлений ваши, внедрять их можно силами своей команды или с нами.",
- q5:"Работаете не только в Ташкенте?",a5:"Основная работа в Ташкенте. В других городах возможна дистанционная диагностика и внедрение по договорённости."
-},
-uz:{
- nav_home:"Bosh sahifa",nav_services:"Xizmatlar",nav_calc:"Kalkulyator",nav_about:"Biz haqimizda",nav_contacts:"Aloqa",nav_cta:"Yozish",menu:"Menyu",
- pt_home:"Quota — Toshkentda savdo bo'yicha konsalting",pt_services:"Xizmatlar",pt_calc:"Yo'qotish kalkulyatori",pt_about:"Biz haqimizda",pt_contacts:"Aloqa",
- foot_tag:"Toshkentda sotuv bo'yicha konsalting. Voronkadagi yo'qotishlarni topamiz va bartaraf etamiz.",foot_nav:"Bo'limlar",foot_contact:"Bog'lanish",
- more:"Batafsil",cta_tg:"Telegramda yozish",cur:"so'm",
- hero_h1:"Sotuv bo'limi pulni qayerda yo'qotayotganini topamiz va tuzatamiz",
- hero_lead:"Voronka, qo'ng'iroqlar va CRMni tekshiramiz, yo'qotishlarni so'mda hisoblaymiz, skriptlar, KPI va nazoratni sozlaymiz. Toshkentda ishlaymiz.",
- hero_cta1:"Mini-audit buyurtma qilish",hero_cta2:"Yo'qotishni hisoblash",
- rep_title:"Diagnostika hisoboti",rep_tag:"shartli ma'lumotlardagi namuna",
- rep_r1:"Bir soatdan ortiq javobsiz arizalar: 38%",rep_r1v:"−21 mln",rep_r2:"Qayta aloqasiz tijorat takliflari: 54%",rep_r2v:"−14 mln",rep_r3:"CRMda sababsiz rad etishlar: 71%",rep_r3v:"ko'rinmaydi",rep_sum:"Oyiga yo'qotish",rep_sumv:"≈ 35 mln so'm",
- h_sv_h:"Nima qilamiz",h_sv_p:"Tashxisdan barqaror sotuvgacha uch qadam. Birinchisida to'xtashingiz ham mumkin.",
- sv1h:"Sotuv diagnostikasi",sv1s:"Voronka, CRM va qo'ng'iroqlarni tahlil qilamiz. Siz so'mda yo'qotishlar hisoboti va tuzatish rejasini olasiz.",sv1pr:"4 mln so'mdan",
- sv2h:"Joriy etish",sv2s:"CRM, skriptlar, KPI va rag'bat tizimini sozlaymiz, rahbar va menejerlarni o'qitamiz.",sv2pr:"15 mln so'mdan",
- sv3h:"Hamrohlik",sv3s:"Har oy ko'rsatkichlarni ko'ramiz, qo'ng'iroqlarni tahlil qilamiz va jarayonni tuzatamiz.",sv3pr:"oyiga 6 mln so'mdan",
- h_calc_h:"Voronkadagi oqish sizga qancha turadi",h_calc_p:"Arizalar, konversiya va o'rtacha chekni kiriting. Kalkulyator qancha tushumni qaytarish mumkinligini ko'rsatadi.",h_calc_btn:"Kalkulyatorni ochish",
- h_pr_h:"Qanday ishlaymiz",
- st1h:"Brif va kirish",st1w:"1–2 kun",st1p:"Maqsadlarni muhokama qilamiz, NDA imzolaymiz, CRM, qo'ng'iroqlar va hisobotlarga kirish olamiz.",
- st2h:"Diagnostika",st2w:"5–7 kun",st2p:"Yo'qotish joylarini topib, so'mda hisoblaymiz. Hisobot va rejani ko'rsatamiz.",
- st3h:"Joriy etish",st3w:"2–6 hafta",st3p:"Jarayonni jamoangiz bilan birga o'zgartiramiz: skriptlar, CRM, KPI, o'qitish.",
- st4h:"Hamrohlik",st4w:"har oy",st4p:"Ko'rsatkichlar hisoboti, qo'ng'iroqlar tahlili, tuzatishlar.",
- h_cta_h:"Mini-auditdan boshlaymiz",h_cta_p:"Nima bilan shug'ullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida o'sha kuni javob beramiz.",
- svp_h:"Xizmatlar",svp_lead:"Tashxisdan barqaror sotuvgacha. Diagnostikadan boshlang, qolganini manzara ayon bo'lgach ulang.",
- lab_for:"Kimlar uchun",lab_inc:"Nimalarni o'z ichiga oladi",lab_res:"Siz nimani olasiz",lab_time:"Muddat",lab_price:"Narx",
- sv1for:"Arizalari bor, lekin sotuv o'smayotgan va sababi noma'lum kompaniyalar.",
- sv1inc:["Voronka va CRM ma'lumotlari tahlili","Qo'ng'iroqlarni tinglash va yozishmalarni ko'rib chiqish","«Maxfiy xaridor»","Menejerlar va bo'lim rahbari bilan suhbat","Har bir bosqich bo'yicha yo'qotishlarni so'mda hisoblash"],
- sv1res:["Yo'qotishlar va ularning sabablari hisoboti","30 kunlik tuzatish rejasi","Joriy etish bo'yicha tijorat taklifi"],sv1t:"5–7 kun",
- sv2for:"Jarayonni o'zgartirishga tayyor va u egasining doimiy nazoratisiz ishlashini istagan kompaniyalar.",
- sv2inc:["CRM va voronkani sozlash (Bitrix24, amoCRM)","Qo'ng'iroq skriptlari va e'tirozlar bilan ishlash","Menejerlar uchun KPI va rag'bat tizimi","Sotuv bo'limi tuzilmasi va yollashda yordam","Reglamentlar va nazorat hisobotlari","Rahbar va menejerlarni o'qitish"],
- sv2res:["Ishlaydigan sotuv tizimi va unga hujjatlar","Skriptlar bo'yicha o'qitilgan menejerlar","Natija ko'rinadigan hisobotlar"],sv2t:"2–6 hafta",
- sv3for:"O'zgarishlarni joriy qilgan va natijani mustahkamlamoqchi bo'lgan kompaniyalar.",
- sv3inc:["Ko'rsatkichlar bo'yicha oylik hisobot","Qo'ng'iroq yozuvlarini tahlil qilish","Skriptlar va KPIni tuzatish","Bo'lim rahbari uchun maslahatlar"],
- sv3res:["Voronkaning barqaror ko'rsatkichlari","Yangi yo'qotishlarni erta aniqlash"],sv3t:"har oy",
- svp_price_h:"Narx qanday shakllanadi",svp_price_p:"Narx sotuv bo'limi hajmiga, kanallar soniga va ma'lumotlar hajmiga bog'liq. Narxlar QQSsiz ko'rsatilgan. Joriy etishda to'lovning bir qismini sotuv o'sishiga bog'lash mumkin: shartlarni oldindan muhokama qilib, shartnomada belgilaymiz.",
- calcp_h:"Yo'qotish kalkulyatori",calcp_lead:"O'z raqamlaringizni kiriting. Bu prognoz emas, stsenariy.",
- c_leads:"Oyiga arizalar soni",c_conv:"Ulardan to'lovgacha yetadi, %",c_check:"O'rtacha chek",c_uplift:"Tartib o'rnatilgach konversiya o'sishi",
- c_extra:"Oyiga qo'shimcha tushum",c_year:"Yiliga",c_now:"Hozir",c_after:"Tartib o'rnatilgach",
- c_note:"Hisob taxminiy kattalikni ko'rsatadi. Haqiqiy natijani diagnostikada sizning ma'lumotlaringiz asosida o'lchaymiz.",
- how_h:"Natijani qanday o'qish kerak",how1h:"Kalkulyator nimani hisoblaydi",how1p:"Arizalar soni to'lov ulushiga va o'rtacha chekka ko'paytiriladi. So'ng slayder bilan tanlagan konversiya o'sishi tushumga qo'shiladi.",
- how2h:"Keyin nima",how2p:"Aynan sizda qancha o'sish real ekanini diagnostika ko'rsatadi: qo'ng'iroqlar, CRM va arizalar bo'yicha sizning ma'lumotlaringiz asosida.",
- ab_h:"Quota haqida",ab_lead:"O'zbekistondagi kompaniyalarga sotuvdagi yo'qotishlarni topish va bartaraf etishda yordam beramiz: voronka diagnostikasidan ishlaydigan sotuv bo'limigacha.",
- pri_h:"Bizning yondashuv",
- pri1h:"Avval raqamlar",pri1p:"Har bir muammoni so'mga aylantiramiz, shunda nimani birinchi tuzatish kerakligi ko'rinadi.",
- pri2h:"Jamoa bilan birga o'zgartiramiz",pri2p:"Skriptlar va KPI faqat menejerlar ulardan foydalansa ishlaydi. Shuning uchun o'qitamiz va hamroh bo'lamiz.",
- pri3h:"Natijani qayd etamiz",pri3p:"Boshlashdan oldin ko'rsatkichlar bo'yicha kelishamiz va har oy solishtiramiz.",
- chk_h:"Sotuvda nimalarni tekshiramiz",chk_p:"Mijoz yo'li besh bosqichdan iborat. Har birida biznes mijozlarni o'z sababi bilan yo'qotadi.",
- s1:"Ariza",s2:"Birinchi aloqa",s3:"Taklif",s4:"Bitim",s5:"Qayta sotuv",
- l1h:"Javobda yo'qotamiz",l1:"Kech javob beriladi, ayrim murojaatlar umuman ko'rilmaydi.",
- l2h:"Suhbatda yo'qotamiz",l2:"Skript yo'q: menejer ehtiyojni aniqlamaydi va keyingi qadamga olib bormaydi.",
- l3h:"Tijorat taklifida yo'qotamiz",l3:"Taklif yuboriladi va «osilib» qoladi: eslatmalar va e'tirozlar bilan ishlash yo'q.",
- l4h:"Ma'lumotlarda yo'qotamiz",l4:"CRM qisman to'ldirilgan, bitimlar qayerda va nima uchun uzilishi noma'lum.",
- l5h:"To'lovdan keyin yo'qotamiz",l5:"Mijozga qaytilmaydi, baza ishlatilmaydi.",
- no_h:"Kim bilan ishlamaymiz",no_p:"Shunday qilib ikkala tomonning vaqtini tejaymiz.",
- no1h:"Ma'lumotlarga kirishsiz",no1p:"Qo'ng'iroq yozuvlari va arizalar tarixisiz biz hisoblamaymiz, taxmin qilamiz.",
- no2h:"Egasining qarorisiz",no2p:"Jarayonni o'zgartiradigan odam bo'lmasa, hisobot papkada yotib qoladi.",
- no3h:"Bir haftada natija va'dasi bilan",no3p:"Sotuvning barqaror o'sishi oylar oladi, buni oldindan aytamiz.",
- no4h:"Umuman arizasiz",no4p:"Avval murojaatlar oqimi kerak, keyin sotuvda tartib.",
- ct_h:"Aloqa",ct_lead:"Telegram — bog'lanishning eng tez yo'li. Nima bilan shug'ullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida o'sha kuni javob beramiz.",
- l_phone:"Telefon",l_city:"Shahar",city:"Toshkent",copy:"Nusxalash",copied:"Nusxalandi",
- faq_h:"Ko'p so'raladigan savollar",
- q1:"Bizda CRM yo'q. Boshlash mumkinmi?",a1:"Ha. Diagnostikani qo'ng'iroqlar, yozishmalar, jadvallar va menejerlar so'rovi asosida o'tkazamiz. CRMni joriy etish bosqichida sozlaymiz.",
- q2:"Ma'lumotlarimiz bilan qanday ishlaysiz?",a2:"Boshlashdan oldin maxfiylik kelishuvini imzolaymiz. Kirish faqat diagnostika uchun kerakli tizimlar va hajmda beriladi.",
- q3:"Birinchi natijagacha qancha vaqt ketadi?",a3:"Yo'qotishlar hisobotini 5–7 kunda olasiz. Voronkadagi o'zgarishlar odatda joriy etishning dastlabki haftalarida ko'rinadi, muddat biznesingizga bog'liq.",
- q4:"Faqat diagnostikani buyurtma qilsa bo'ladimi?",a4:"Ha. Hisobot va tuzatish rejasi sizniki, ularni o'z jamoangiz kuchi bilan yoki biz bilan birga amalga oshirishingiz mumkin.",
- q5:"Faqat Toshkentda ishlaysizmi?",a5:"Asosiy ish Toshkentda. Boshqa shaharlarda masofaviy diagnostika va kelishuv asosida joriy etish mumkin."
-},
-en:{
- nav_home:"Home",nav_services:"Services",nav_calc:"Calculator",nav_about:"About",nav_contacts:"Contact",nav_cta:"Message us",menu:"Menu",
- pt_home:"Quota — sales consulting in Tashkent",pt_services:"Services",pt_calc:"Loss calculator",pt_about:"About",pt_contacts:"Contact",
- foot_tag:"Sales consulting in Tashkent. We find the leaks in your funnel and fix them.",foot_nav:"Pages",foot_contact:"Get in touch",
- more:"Learn more",cta_tg:"Message us on Telegram",cur:"UZS",
- hero_h1:"We find where your sales team loses money and fix it",
- hero_lead:"We review your funnel, calls and CRM, put the losses into numbers, and set up scripts, KPIs and control. Based in Tashkent.",
- hero_cta1:"Order a mini-audit",hero_cta2:"Calculate your losses",
- rep_title:"Diagnostic report",rep_tag:"sample on illustrative data",
- rep_r1:"Leads unanswered for over an hour: 38%",rep_r1v:"−UZS 21M",rep_r2:"Proposals with no follow-up: 54%",rep_r2v:"−UZS 14M",rep_r3:"Lost deals with no reason in CRM: 71%",rep_r3v:"invisible",rep_sum:"Monthly leak",rep_sumv:"≈ UZS 35M",
- h_sv_h:"What we do",h_sv_p:"Three steps from diagnosis to steady sales. You can stop after the first one.",
- sv1h:"Sales diagnostic",sv1s:"We analyze your funnel, CRM and calls. You get a report with losses in UZS and a fix plan.",sv1pr:"from UZS 4M",
- sv2h:"Implementation",sv2s:"We set up CRM, scripts, KPIs and incentives, and train your head of sales and managers.",sv2pr:"from UZS 15M",
- sv3h:"Ongoing support",sv3s:"Every month we review metrics, analyze calls and adjust the process.",sv3pr:"from UZS 6M per month",
- h_calc_h:"What the leak in your funnel costs",h_calc_p:"Enter your leads, conversion and average check. The calculator shows how much revenue you could win back.",h_calc_btn:"Open the calculator",
- h_pr_h:"How we work",
- st1h:"Brief and access",st1w:"1–2 days",st1p:"We discuss goals, sign an NDA and get access to your CRM, calls and reports.",
- st2h:"Diagnostic",st2w:"5–7 days",st2p:"We find where you lose money and put it in UZS. You get the report and a plan.",
- st3h:"Implementation",st3w:"2–6 weeks",st3p:"We change the process together with your team: scripts, CRM, KPIs, training.",
- st4h:"Ongoing support",st4w:"every month",st4p:"Metrics report, call reviews, adjustments.",
- h_cta_h:"Let's start with a mini-audit",h_cta_p:"Tell us what your business does and how many leads you get per month. We reply the same working day.",
- svp_h:"Services",svp_lead:"From diagnosis to steady sales. Start with the diagnostic and add the rest once the picture is clear.",
- lab_for:"Who it's for",lab_inc:"What's included",lab_res:"What you get",lab_time:"Duration",lab_price:"Price",
- sv1for:"Companies that get leads but whose sales are flat and nobody knows why.",
- sv1inc:["Funnel and CRM data analysis","Call listening and chat review","Mystery shopping","Interviews with managers and the head of sales","Losses in UZS for every stage"],
- sv1res:["A report with losses and their causes","A 30-day fix plan","A commercial proposal for implementation"],sv1t:"5–7 days",
- sv2for:"Companies ready to change the process and want it to run without the owner checking every day.",
- sv2inc:["CRM and funnel setup (Bitrix24, amoCRM)","Call scripts and objection handling","KPIs and incentive system for managers","Sales team structure and hiring support","Playbooks and control reports","Training for the head of sales and managers"],
- sv2res:["A working sales system with documents","Managers trained on the scripts","Reports that show the result"],sv2t:"2–6 weeks",
- sv3for:"Companies that made the changes and want to make the result stick.",
- sv3inc:["Monthly metrics report","Call recording reviews","Script and KPI adjustments","Consulting for the head of sales"],
- sv3res:["Stable funnel metrics","Early detection of new leaks"],sv3t:"monthly",
- svp_price_h:"How the price is set",svp_price_p:"The price depends on the size of your sales team, the number of channels and the amount of data. Prices exclude VAT. For implementation, part of the fee can depend on sales growth: we agree the terms upfront and put them in the contract.",
- calcp_h:"Loss calculator",calcp_lead:"Enter your own numbers. This is a scenario, not a forecast.",
- c_leads:"Leads per month",c_conv:"Share that reaches payment, %",c_check:"Average check",c_uplift:"Conversion growth after we fix the process",
- c_extra:"Extra revenue per month",c_year:"Per year",c_now:"Now",c_after:"After the fix",
- c_note:"The calculation shows an order of magnitude. We measure the real effect on your data during the diagnostic.",
- how_h:"How to read the result",how1h:"What the calculator does",how1p:"Leads are multiplied by the share that pays and by the average check. Then the conversion growth you picked with the slider is added to revenue.",
- how2h:"What next",how2p:"How much growth is realistic for you is shown by the diagnostic on your own data: calls, CRM and leads.",
- ab_h:"About Quota",ab_lead:"We help companies in Uzbekistan find the leaks in their sales and close them, from a funnel diagnostic to a working sales team.",
- pri_h:"Our approach",
- pri1h:"Numbers first",pri1p:"We turn every problem into UZS so it's clear what to fix first.",
- pri2h:"We change it with your team",pri2p:"Scripts and KPIs only work if managers use them. That's why we train and stay involved.",
- pri3h:"We record the result",pri3p:"We agree on metrics before we start and check them every month.",
- chk_h:"What we check in your sales",chk_p:"The customer path has five steps. At each one a business loses people for its own reason.",
- s1:"Lead",s2:"First contact",s3:"Proposal",s4:"Deal",s5:"Repeat sale",
- l1h:"Lost at the reply",l1:"Replies come late and some inquiries are never handled.",
- l2h:"Lost in the conversation",l2:"No script: the manager doesn't find the need or lead to the next step.",
- l3h:"Lost at the proposal",l3:"The proposal goes out and stalls: no reminders, no work on objections.",
- l4h:"Lost in the data",l4:"CRM is half filled, so it's unclear where and why deals fall through.",
- l5h:"Lost after payment",l5:"Nobody goes back to the customer and the database sits unused.",
- no_h:"Who we don't work with",no_p:"This saves time for both sides.",
- no1h:"No access to data",no1p:"Without call recordings and lead history we would be guessing, not measuring.",
- no2h:"No decision from the owner",no2p:"If nobody can change the process, the report stays in a folder.",
- no3h:"Expecting results in a week",no3p:"Steady sales growth takes months, and we say so upfront.",
- no4h:"No leads at all",no4p:"You need a flow of inquiries first, then order in sales.",
- ct_h:"Contact",ct_lead:"Telegram is the fastest way to reach us. Tell us what your business does and how many leads you get per month. We reply the same working day.",
- l_phone:"Phone",l_city:"City",city:"Tashkent",copy:"Copy",copied:"Copied",
- faq_h:"FAQ",
- q1:"We don't have a CRM. Can we start?",a1:"Yes. We run the diagnostic from calls, chats, spreadsheets and manager interviews. We set up the CRM during implementation.",
- q2:"How do you handle our data?",a2:"We sign a confidentiality agreement before starting. We need access only to the systems and the volume the diagnostic requires.",
- q3:"How long until the first result?",a3:"You get the loss report in 5–7 days. Changes in the funnel usually show in the first weeks of implementation, though timing depends on your business.",
- q4:"Can we order only the diagnostic?",a4:"Yes. The report and the fix plan are yours, and you can carry them out with your own team or with us.",
- q5:"Do you work outside Tashkent?",a5:"Mainly in Tashkent. In other cities we can run the diagnostic remotely and implement by agreement."
-}
+/* Quota — translations: Russian text -> [Uzbek, English]. Russian is the page text itself. */
+window.QUOTA_I18N = {
+"Quota — консалтинг по продажам в Ташкенте": [
+"Quota — Toshkentda savdo boʻyicha konsalting",
+"Quota — sales consulting in Tashkent"
+],
+"Аудит отдела продаж в Ташкенте: находим потери в воронке, разбираем звонки, выстраиваем скрипты, KPI и контроль. Считаем потери в сумах. Мини-аудит от Quota.": [
+"Toshkentda savdo boʻlimi auditi: voronkadagi yoʻqotishlarni topamiz, qoʻngʻiroqlarni tahlil qilamiz, skriptlar, KPI va nazoratni yoʻlga qoʻyamiz. Yoʻqotishlarni soʻmda hisoblaymiz. Quota’dan mini-audit.",
+"Sales team audit in Tashkent: we find where your funnel leaks, review calls and set up scripts, KPIs and control. Losses calculated in UZS. Mini-audit from Quota."
+],
+"Quota, на главную": [
+"Quota, bosh sahifaga",
+"Quota, home page"
+],
+"Разделы": [
+"Boʻlimlar",
+"Sections"
+],
+"Услуги": [
+"Xizmatlar",
+"Services"
+],
+"Калькулятор": [
+"Kalkulyator",
+"Calculator"
+],
+"О нас": [
+"Biz haqimizda",
+"About"
+],
+"Вопросы": [
+"Savollar",
+"FAQ"
+],
+"Контакты": [
+"Kontaktlar",
+"Contacts"
+],
+"Язык: русский": [
+"Til",
+"Language"
+],
+"Русский": [
+"Ruscha",
+"Russian"
+],
+"Сменить тему": [
+"Mavzuni almashtirish",
+"Switch theme"
+],
+"Мини-аудит": [
+"Mini-audit",
+"Mini-audit"
+],
+"Меню": [
+"Menyu",
+"Menu"
+],
+"Консалтинг по продажам · Ташкент": [
+"Savdo boʻyicha konsalting · Toshkent",
+"Sales consulting · Tashkent"
+],
+"Находим, где продажи теряют деньги": [
+"Savdo qayerda pul yoʻqotayotganini topamiz",
+"We find where your sales lose money"
+],
+", и чиним это": [
+" va buni tuzatamiz",
+", and fix it"
+],
+"Проверяем воронку, звонки и работу менеджеров, считаем потери в сумах и выстраиваем скрипты, KPI и контроль. Вы видите, сколько денег уходит и куда.": [
+"Voronka, qoʻngʻiroqlar va menejerlar ishini tekshiramiz, yoʻqotishlarni soʻmda hisoblaymiz va skriptlar, KPI hamda nazoratni yoʻlga qoʻyamiz. Qancha pul va qayerga ketayotganini koʻrasiz.",
+"We check your funnel, calls and how managers work, calculate losses in UZS and set up scripts, KPIs and control. You see how much money leaks out and where."
+],
+"Заказать мини-аудит": [
+"Mini-audit buyurtma qilish",
+"Book a mini-audit"
+],
+"Посчитать потери": [
+"Yoʻqotishlarni hisoblash",
+"Calculate losses"
+],
+"Режим воронки": [
+"Voronka rejimi",
+"Funnel mode"
+],
+"Сейчас": [
+"Hozir",
+"Now"
+],
+"После аудита": [
+"Auditdan keyin",
+"After audit"
+],
+"заявка": [
+"ariza",
+"lead"
+],
+"потеряна": [
+"yoʻqotilgan",
+"lost"
+],
+"оплата": [
+"toʻlov",
+"paid"
+],
+"Стеклянная воронка: заявки падают сверху, часть вылетает через трещины на этапах продаж, оставшиеся становятся оплатами": [
+"Shisha voronka: arizalar yuqoridan tushadi, bir qismi savdo bosqichlaridagi yoriqlardan chiqib ketadi, qolganlari toʻlovga aylanadi",
+"Glass funnel: leads fall in from the top, some escape through cracks at sales stages, the rest become payments"
+],
+"Заявки": [
+"Arizalar",
+"Leads"
+],
+"Ответ за час": [
+"Bir soatda javob",
+"Reply within 1 hour"
+],
+"Встреча": [
+"Uchrashuv",
+"Meeting"
+],
+"КП": [
+"TT",
+"Proposal"
+],
+"Переговоры": [
+"Muzokaralar",
+"Negotiation"
+],
+"Оплата": [
+"Toʻlov",
+"Payment"
+],
+"заявок": [
+"ariza",
+"leads"
+],
+"потеряно": [
+"yoʻqotildi",
+"lost"
+],
+"оплат": [
+"toʻlov",
+"paid"
+],
+"конверсия": [
+"konversiya",
+"conversion"
+],
+"Аудит воронки": [
+"Voronka auditi",
+"Funnel audit"
+],
+"Разбор звонков": [
+"Qoʻngʻiroqlar tahlili",
+"Call reviews"
+],
+"Скрипты продаж": [
+"Savdo skriptlari",
+"Sales scripts"
+],
+"KPI и мотивация": [
+"KPI va motivatsiya",
+"KPIs and motivation"
+],
+"Найм и обучение": [
+"Yollash va oʻqitish",
+"Hiring and training"
+],
+"Воронка в CRM": [
+"CRM’dagi voronka",
+"Funnel in your CRM"
+],
+"Знакомо?": [
+"Tanishmi?",
+"Sound familiar?"
+],
+"Заявки есть, а продаж меньше, чем должно быть": [
+"Arizalar bor, lekin savdo boʻlishi kerakdan kam",
+"You have leads, but fewer sales than you should"
+],
+"Обычно дело не в рынке и не в рекламе. Деньги теряются внутри отдела продаж, и снаружи этого не видно.": [
+"Odatda gap bozorda ham, reklamada ham emas. Pul savdo boʻlimi ichida yoʻqoladi va tashqaridan buni koʻrib boʻlmaydi.",
+"Usually it is not the market or the ads. Money is lost inside the sales team, and you can’t see it from the outside."
+],
+"Отвечают слишком поздно": [
+"Juda kech javob berishadi",
+"Replies come too late"
+],
+"Клиент оставил заявку и ждёт час, а за это время уже написал конкурентам. Каждый такой час стоит денег.": [
+"Mijoz ariza qoldirib, bir soat kutadi, bu vaqt ichida esa raqobatchilarga yozib boʻladi. Har bir shunday soat pulga tushadi.",
+"A client leaves a request and waits an hour, and by then has already written to your competitors. Every such hour costs money."
+],
+"Каждый продаёт по-своему": [
+"Har kim oʻzicha sotadi",
+"Everyone sells their own way"
+],
+"Нет единого скрипта и стандарта. Результат зависит от настроения менеджера, а не от системы.": [
+"Yagona skript va standart yoʻq. Natija tizimga emas, menejerning kayfiyatiga bogʻliq.",
+"There is no shared script or standard. Results depend on a manager’s mood, not on a system."
+],
+"Не видно, где провал": [
+"Muammo qayerdaligi koʻrinmaydi",
+"You can’t see where it breaks"
+],
+"Отчёты показывают итог месяца, но не отвечают на вопрос, на каком шаге и почему уходят клиенты.": [
+"Hisobotlar oy natijasini koʻrsatadi, lekin mijozlar qaysi bosqichda va nima uchun ketayotganiga javob bermaydi.",
+"Reports show the monthly total, but not at which step and why clients leave."
+],
+"От диагноза до стабильных продаж": [
+"Tashxisdan barqaror savdogacha",
+"From diagnosis to stable sales"
+],
+"Три шага. Можно остановиться после первого: отчёт и план исправлений останутся у вас.": [
+"Uch qadam. Birinchisidan keyin toʻxtash mumkin: hisobot va tuzatish rejasi sizda qoladi.",
+"Three steps. You can stop after the first: the report and the fix plan stay with you."
+],
+"Нет регламента ответа на заявку": [
+"Arizaga javob berish reglamenti yoʻq",
+"No rule for how fast to reply to a lead"
+],
+"Критично": [
+"Jiddiy",
+"Critical"
+],
+"Скрипт не доводит до встречи": [
+"Skript uchrashuvgacha olib bormaydi",
+"The script doesn’t lead to a meeting"
+],
+"Важно": [
+"Muhim",
+"Important"
+],
+"Причины отказов не фиксируются": [
+"Rad etish sabablari qayd etilmaydi",
+"Reasons for lost deals aren’t recorded"
+],
+"Диагностика продаж": [
+"Savdo diagnostikasi",
+"Sales diagnostics"
+],
+"Слушаем звонки, разбираем переписки и воронку, общаемся с менеджерами. На выходе отчёт: где теряются клиенты, сколько это стоит и что исправить в первую очередь.": [
+"Qoʻngʻiroqlarni tinglaymiz, yozishmalar va voronkani tahlil qilamiz, menejerlar bilan suhbatlashamiz. Natijada hisobot: mijozlar qayerda yoʻqoladi, bu qancha turadi va birinchi navbatda nimani tuzatish kerak.",
+"We listen to calls, review chats and the funnel, and talk to your managers. You get a report: where clients are lost, what it costs and what to fix first."
+],
+"от 4 млн сум": [
+"4 mln soʻmdan",
+"from UZS 4M"
+],
+"Подробнее →": [
+"Batafsil →",
+"Details →"
+],
+"Новая": [
+"Yangi",
+"New"
+],
+"4,2 млн": [
+"4,2 mln",
+"4.2M"
+],
+"2,8 млн": [
+"2,8 mln",
+"2.8M"
+],
+"7,5 млн": [
+"7,5 mln",
+"7.5M"
+],
+"12 млн": [
+"12 mln",
+"12M"
+],
+"3,1 млн": [
+"3,1 mln",
+"3.1M"
+],
+"9 млн": [
+"9 mln",
+"9M"
+],
+"Внедрение": [
+"Joriy etish",
+"Implementation"
+],
+"Пишем скрипты, ставим KPI и мотивацию, выстраиваем этапы воронки и обучаем команду. Меняем процесс вместе с вашими людьми, чтобы он работал без нас.": [
+"Skriptlar yozamiz, KPI va motivatsiyani belgilaymiz, voronka bosqichlarini quramiz va jamoani oʻqitamiz. Jarayonni sizning odamlaringiz bilan birga oʻzgartiramiz, toki u bizsiz ishlasin.",
+"We write scripts, set KPIs and motivation, build funnel stages and train the team. We change the process together with your people so it works without us."
+],
+"от 15 млн сум": [
+"15 mln soʻmdan",
+"from UZS 15M"
+],
+"Выполнение плана": [
+"Rejaning bajarilishi",
+"Plan completion"
+],
+"пример": [
+"misol",
+"example"
+],
+"план": [
+"reja",
+"plan"
+],
+"Май": [
+"May",
+"May"
+],
+"Июн": [
+"Iyun",
+"Jun"
+],
+"Июл": [
+"Iyul",
+"Jul"
+],
+"Авг": [
+"Avg",
+"Aug"
+],
+"Сен": [
+"Sen",
+"Sep"
+],
+"Окт": [
+"Okt",
+"Oct"
+],
+"Сопровождение": [
+"Kuzatib borish",
+"Ongoing support"
+],
+"Раз в месяц смотрим метрики, слушаем звонки и правим скрипты. Новые потери ловим раньше, чем они станут заметны в выручке.": [
+"Oyiga bir marta koʻrsatkichlarni koʻramiz, qoʻngʻiroqlarni tinglaymiz va skriptlarni tuzatamiz. Yangi yoʻqotishlarni ular tushumda sezilishidan oldin ushlaymiz.",
+"Once a month we review metrics, listen to calls and adjust scripts. We catch new losses before they show up in revenue."
+],
+"от 6 млн сум / мес": [
+"oyiga 6 mln soʻmdan",
+"from UZS 6M / month"
+],
+"Процесс": [
+"Jarayon",
+"Process"
+],
+"Как мы работаем": [
+"Qanday ishlaymiz",
+"How we work"
+],
+"От первого разговора до отчёта проходит около двух недель.": [
+"Birinchi suhbatdan hisobotgacha taxminan ikki hafta oʻtadi.",
+"It takes about two weeks from the first call to the report."
+],
+"Бриф и доступ": [
+"Brif va kirish huquqi",
+"Brief and access"
+],
+"1–2 дня": [
+"1–2 kun",
+"1–2 days"
+],
+"Обсуждаем цели, подписываем NDA, получаем доступ к CRM, звонкам и отчётам.": [
+"Maqsadlarni muhokama qilamiz, NDA imzolaymiz, CRM, qoʻngʻiroqlar va hisobotlarga kirish huquqini olamiz.",
+"We discuss goals, sign an NDA and get access to your CRM, calls and reports."
+],
+"Диагностика": [
+"Diagnostika",
+"Diagnostics"
+],
+"5–7 дней": [
+"5–7 kun",
+"5–7 days"
+],
+"Находим места потерь и считаем их в сумах. Показываем отчёт и план.": [
+"Yoʻqotish joylarini topamiz va ularni soʻmda hisoblaymiz. Hisobot va rejani koʻrsatamiz.",
+"We find where losses happen and calculate them in UZS. We present the report and the plan."
+],
+"2–6 недель": [
+"2–6 hafta",
+"2–6 weeks"
+],
+"Меняем процесс вместе с командой: скрипты, воронка, KPI, обучение.": [
+"Jarayonni jamoa bilan birga oʻzgartiramiz: skriptlar, voronka, KPI, oʻqitish.",
+"We change the process together with the team: scripts, funnel, KPIs, training."
+],
+"каждый месяц": [
+"har oy",
+"every month"
+],
+"Отчёт по метрикам, разбор звонков, корректировки.": [
+"Koʻrsatkichlar boʻyicha hisobot, qoʻngʻiroqlar tahlili, tuzatishlar.",
+"Metrics report, call reviews, adjustments."
+],
+"Сколько выручки можно вернуть": [
+"Qancha tushumni qaytarish mumkin",
+"How much revenue can you win back"
+],
+"Введите заявки, конверсию и средний чек. Калькулятор покажет, сколько денег приносит каждый процент роста конверсии.": [
+"Arizalar, konversiya va oʻrtacha chekni kiriting. Kalkulyator konversiyaning har bir foiz oʻsishi qancha pul keltirishini koʻrsatadi.",
+"Enter leads, conversion and average deal size. The calculator shows how much money each extra percent of conversion brings."
+],
+"Открыть калькулятор": [
+"Kalkulyatorni ochish",
+"Open the calculator"
+],
+"Обсудить в Telegram": [
+"Telegram’da muhokama qilish",
+"Discuss in Telegram"
+],
+"Продажи без потерь: диагностика, скрипты, KPI и обучение для отделов продаж в Ташкенте.": [
+"Yoʻqotishsiz savdo: Toshkentdagi savdo boʻlimlari uchun diagnostika, skriptlar, KPI va oʻqitish.",
+"Sales without leaks: diagnostics, scripts, KPIs and training for sales teams in Tashkent."
+],
+"Связь": [
+"Aloqa",
+"Contact"
+],
+"© 2026 Quota · Ташкент": [
+"© 2026 Quota · Toshkent",
+"© 2026 Quota · Tashkent"
+],
+"Услуги: аудит продаж, скрипты, KPI — Quota": [
+"Xizmatlar: savdo auditi, skriptlar, KPI — Quota",
+"Services: sales audit, scripts, KPIs — Quota"
+],
+"Услуги Quota: диагностика воронки продаж, скрипты и обучение менеджеров, KPI и мотивация, сопровождение отдела продаж. Сроки и цены. Ташкент.": [
+"Quota xizmatlari: savdo voronkasi diagnostikasi, skriptlar va menejerlarni oʻqitish, KPI va motivatsiya, savdo boʻlimini kuzatib borish. Muddatlar va narxlar. Toshkent.",
+"Quota services: sales funnel diagnostics, scripts and manager training, KPIs and motivation, ongoing sales team support. Timelines and prices. Tashkent."
+],
+"Начните с диагностики: она покажет, где именно теряются деньги. Внедрение и сопровождение подключайте, когда картина станет понятна.": [
+"Diagnostikadan boshlang: u pul aynan qayerda yoʻqolayotganini koʻrsatadi. Joriy etish va kuzatib borishni manzara aniq boʻlgach ulang.",
+"Start with diagnostics: it shows exactly where money is lost. Add implementation and support once the picture is clear."
+],
+"Находим провалы, которых не видно в отчётах": [
+"Hisobotlarda koʻrinmaydigan muammolarni topamiz",
+"We find the gaps reports don’t show"
+],
+"Проходим по каждому этапу: скорость ответа, звонки, КП, повторные касания. Каждую найденную проблему переводим в сумы, чтобы было ясно, что чинить первым.": [
+"Har bir bosqichni koʻrib chiqamiz: javob tezligi, qoʻngʻiroqlar, TT, takroriy aloqalar. Topilgan har bir muammoni soʻmga aylantiramiz, toki nimani birinchi tuzatish kerakligi aniq boʻlsin.",
+"We go through every stage: reply speed, calls, proposals, follow-ups. Each problem we find is turned into UZS, so it’s clear what to fix first."
+],
+"Отчёт с потерями по каждому этапу воронки": [
+"Voronkaning har bir bosqichi boʻyicha yoʻqotishlar hisoboti",
+"A loss report for every funnel stage"
+],
+"Причины потерь, подтверждённые звонками и перепиской": [
+"Qoʻngʻiroqlar va yozishmalar bilan tasdiqlangan yoʻqotish sabablari",
+"Causes of losses, backed by calls and chats"
+],
+"План исправлений на 30 дней": [
+"30 kunlik tuzatish rejasi",
+"A 30-day fix plan"
+],
+"Стеклянная лупа движется над столбчатым графиком продаж и выделяет красным два провала": [
+"Shisha lupa savdo ustunli grafigi ustida harakatlanib, ikkita muammoni qizil rangda ajratadi",
+"A glass magnifier moves over a sales bar chart and highlights two gaps in red"
+],
+"Нет ответа за час": [
+"Bir soatda javob yoʻq",
+"No reply within 1 hour"
+],
+"−21 млн сум в месяц": [
+"oyiga −21 mln soʻm",
+"−UZS 21M per month"
+],
+"КП без повторного контакта": [
+"Takroriy aloqasiz TT",
+"Proposal with no follow-up"
+],
+"−14 млн сум в месяц": [
+"oyiga −14 mln soʻm",
+"−UZS 14M per month"
+],
+"Состав работ": [
+"Ishlar tarkibi",
+"Scope of work"
+],
+"Что входит в каждый шаг": [
+"Har bir qadamga nima kiradi",
+"What each step includes"
+],
+"Шаги можно брать по одному или вместе. В таблице видно, что делаем на каждом.": [
+"Qadamlarni alohida yoki birga olish mumkin. Jadvalda har birida nima qilishimiz koʻrinadi.",
+"Take the steps one at a time or together. The table shows what we do in each."
+],
+"Шаг 1": [
+"1-qadam",
+"Step 1"
+],
+"Для компаний, у которых есть заявки, но продажи не растут и непонятно почему.": [
+"Arizalari bor, lekin savdosi oʻsmayotgan va sababi tushunarsiz boʻlgan kompaniyalar uchun.",
+"For companies that have leads, but sales aren’t growing and it’s unclear why."
+],
+"Срок": [
+"Muddat",
+"Timeline"
+],
+"Стоимость": [
+"Narx",
+"Price"
+],
+"Шаг 2": [
+"2-qadam",
+"Step 2"
+],
+"Для тех, кто готов менять процесс и хочет, чтобы он работал без постоянного контроля владельца.": [
+"Jarayonni oʻzgartirishga tayyor va u egasining doimiy nazoratisiz ishlashini istaganlar uchun.",
+"For those ready to change the process and want it to work without the owner’s constant control."
+],
+"Шаг 3": [
+"3-qadam",
+"Step 3"
+],
+"Для тех, кто внедрил изменения и хочет закрепить результат.": [
+"Oʻzgarishlarni joriy etgan va natijani mustahkamlashni istaganlar uchun.",
+"For those who have made the changes and want to lock in the result."
+],
+"ежемесячно": [
+"har oy",
+"monthly"
+],
+"Сравнение шагов": [
+"Qadamlarni solishtirish",
+"Step comparison"
+],
+"Что делаем": [
+"Nima qilamiz",
+"What we do"
+],
+"Разбираем": [
+"Tahlil qilamiz",
+"We analyse"
+],
+"Анализ воронки и заявок": [
+"Voronka va arizalar tahlili",
+"Funnel and lead analysis"
+],
+"входит": [
+"kiradi",
+"included"
+],
+"не входит": [
+"kirmaydi",
+"not included"
+],
+"Прослушивание звонков и переписок": [
+"Qoʻngʻiroqlar va yozishmalarni tinglash",
+"Listening to calls and reading chats"
+],
+"«Тайный покупатель»": [
+"«Yashirin xaridor»",
+"Mystery shopping"
+],
+"Интервью с менеджерами и руководителем": [
+"Menejerlar va rahbar bilan suhbat",
+"Interviews with managers and the head of sales"
+],
+"Расчёт потерь в сумах": [
+"Yoʻqotishlarni soʻmda hisoblash",
+"Losses calculated in UZS"
+],
+"Меняем": [
+"Oʻzgartiramiz",
+"We change"
+],
+"Скрипты и работа с возражениями": [
+"Skriptlar va eʼtirozlar bilan ishlash",
+"Scripts and objection handling"
+],
+"корректировка": [
+"tuzatish",
+"adjustments"
+],
+"KPI и мотивация менеджеров": [
+"Menejerlar KPI va motivatsiyasi",
+"Manager KPIs and motivation"
+],
+"Воронка в CRM: этапы, поля, отчёты": [
+"CRM’dagi voronka: bosqichlar, maydonlar, hisobotlar",
+"Funnel in your CRM: stages, fields, reports"
+],
+"Правила работы с заявкой": [
+"Ariza bilan ishlash qoidalari",
+"Rules for handling leads"
+],
+"Структура отдела и помощь в найме": [
+"Boʻlim tuzilmasi va yollashda yordam",
+"Team structure and help with hiring"
+],
+"Регламенты и контрольные отчёты": [
+"Reglamentlar va nazorat hisobotlari",
+"Procedures and control reports"
+],
+"Обучение руководителя и менеджеров": [
+"Rahbar va menejerlarni oʻqitish",
+"Training for the head of sales and managers"
+],
+"консультации": [
+"maslahatlar",
+"consultations"
+],
+"Вы получаете": [
+"Siz olasiz",
+"You get"
+],
+"Отчёт с потерями и их причинами": [
+"Yoʻqotishlar va ularning sabablari hisoboti",
+"A report on losses and their causes"
+],
+"ежемесячный": [
+"har oylik",
+"monthly"
+],
+"Работающую систему продаж и документы": [
+"Ishlaydigan savdo tizimi va hujjatlar",
+"A working sales system and its documents"
+],
+"Менеджеров, обученных по скриптам": [
+"Skriptlar boʻyicha oʻqitilgan menejerlar",
+"Managers trained on the scripts"
+],
+"Раннее выявление новых потерь": [
+"Yangi yoʻqotishlarni erta aniqlash",
+"Early detection of new losses"
+],
+"Условия": [
+"Shartlar",
+"Terms"
+],
+"от 6 млн / мес": [
+"oyiga 6 mln dan",
+"from 6M / month"
+],
+"Как формируется цена": [
+"Narx qanday shakllanadi",
+"How the price is set"
+],
+"Стоимость зависит от размера отдела продаж, числа каналов и объёма данных. Цены без НДС. Часть оплаты за внедрение можно привязать к росту продаж: условия обсуждаем заранее и фиксируем в договоре.": [
+"Narx savdo boʻlimi hajmi, kanallar soni va maʼlumotlar hajmiga bogʻliq. Narxlar QQSsiz. Joriy etish toʻlovining bir qismini savdo oʻsishiga bogʻlash mumkin: shartlarni oldindan kelishib, shartnomada qayd etamiz.",
+"The price depends on the size of the sales team, the number of channels and the amount of data. Prices exclude VAT. Part of the implementation fee can be tied to sales growth: we agree on the terms upfront and put them in the contract."
+],
+"Следующий шаг": [
+"Keyingi qadam",
+"Next step"
+],
+"Начнём с мини-аудита": [
+"Mini-auditdan boshlaymiz",
+"Let’s start with a mini-audit"
+],
+"Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
+"Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
+"Tell us what your business does and how many leads you get per month. We reply the same day during working hours."
+],
+"Написать в Telegram": [
+"Telegram’ga yozish",
+"Message us on Telegram"
+],
+"Все контакты": [
+"Barcha kontaktlar",
+"All contacts"
+],
+"Калькулятор потерь в продажах — Quota": [
+"Savdodagi yoʻqotishlar kalkulyatori — Quota",
+"Sales loss calculator — Quota"
+],
+"Бесплатный калькулятор: посчитайте, сколько выручки можно вернуть, если навести порядок в заявках, конверсии и среднем чеке. Quota, Ташкент.": [
+"Bepul kalkulyator: arizalar, konversiya va oʻrtacha chekda tartib oʻrnatilsa, qancha tushumni qaytarish mumkinligini hisoblang. Quota, Toshkent.",
+"Free calculator: estimate how much revenue you could win back by putting leads, conversion and average deal size in order. Quota, Tashkent."
+],
+"Калькулятор потерь": [
+"Yoʻqotishlar kalkulyatori",
+"Loss calculator"
+],
+"Подвигайте ползунки под свои цифры. Это сценарий, а не прогноз: он показывает порядок суммы, которую стоит искать.": [
+"Slayderlarni oʻz raqamlaringizga moslang. Bu prognoz emas, ssenariy: u qidirishga arziydigan summaning tartibini koʻrsatadi.",
+"Move the sliders to match your numbers. This is a scenario, not a forecast: it shows the order of magnitude worth looking for."
+],
+"Заявок в месяц": [
+"Oyiga arizalar",
+"Leads per month"
+],
+"Доходит до оплаты": [
+"Toʻlovgacha yetadi",
+"Reach payment"
+],
+"Средний чек": [
+"Oʻrtacha chek",
+"Average deal size"
+],
+"3 000 000 сум": [
+"3 000 000 soʻm",
+"UZS 3,000,000"
+],
+"Рост конверсии после наведения порядка": [
+"Tartib oʻrnatilgandan keyin konversiya oʻsishi",
+"Conversion growth after fixing the process"
+],
+"Дополнительная выручка в месяц": [
+"Oyiga qoʻshimcha tushum",
+"Extra revenue per month"
+],
+"За год:": [
+"Bir yilda:",
+"Per year:"
+],
+"После": [
+"Keyin",
+"After"
+],
+"Реальный эффект измеряем на ваших данных в диагностике.": [
+"Haqiqiy samarani diagnostikada sizning maʼlumotlaringiz asosida oʻlchaymiz.",
+"We measure the real effect on your own data during diagnostics."
+],
+"Обсудить расчёт в Telegram": [
+"Hisob-kitobni Telegram’da muhokama qilish",
+"Discuss the estimate on Telegram"
+],
+"Что считает калькулятор": [
+"Kalkulyator nimani hisoblaydi",
+"What the calculator counts"
+],
+"Заявки умножаются на долю оплат и средний чек. К этой выручке добавляется рост конверсии, который вы выбрали ползунком.": [
+"Arizalar toʻlovlar ulushi va oʻrtacha chekka koʻpaytiriladi. Bu tushumga siz slayder bilan tanlagan konversiya oʻsishi qoʻshiladi.",
+"Leads are multiplied by the share that pays and the average deal size. The conversion growth you picked with the slider is added on top."
+],
+"Что дальше": [
+"Keyin nima",
+"What’s next"
+],
+"Какой рост реален именно у вас, покажет диагностика: мы считаем его по вашим звонкам, заявкам и переписке.": [
+"Aynan sizda qanday oʻsish real ekanini diagnostika koʻrsatadi: biz uni qoʻngʻiroqlaringiz, arizalaringiz va yozishmalaringiz asosida hisoblaymiz.",
+"Diagnostics shows what growth is realistic for you: we calculate it from your calls, leads and chats."
+],
+"О Quota — консалтинг по продажам в Ташкенте": [
+"Quota haqida — Toshkentda savdo boʻyicha konsalting",
+"About Quota — sales consulting in Tashkent"
+],
+"Как работает Quota: принципы, пять шагов, на которых компании теряют клиентов, процесс аудита отдела продаж и с кем мы не работаем.": [
+"Quota qanday ishlaydi: tamoyillar, kompaniyalar mijoz yoʻqotadigan besh qadam, savdo boʻlimi auditi jarayoni va kimlar bilan ishlamasligimiz.",
+"How Quota works: principles, the five steps where companies lose clients, our sales team audit process and who we don’t work with."
+],
+"О Quota": [
+"Quota haqida",
+"About Quota"
+],
+"Чиним продажи": [
+"Savdoni tuzatamiz",
+"We fix sales"
+],
+", а не пишем отчёты в стол": [
+", javonga hisobot yozmaymiz",
+", not write reports for the shelf"
+],
+"Quota помогает компаниям в Узбекистане находить потери в продажах и закрывать их. Мы работаем с тем, что происходит между заявкой и оплатой: со скоростью ответа, разговорами, предложениями и дисциплиной отдела.": [
+"Quota Oʻzbekistondagi kompaniyalarga savdodagi yoʻqotishlarni topish va bartaraf etishda yordam beradi. Biz ariza va toʻlov oraligʻida sodir boʻladigan narsalar bilan ishlaymiz: javob tezligi, suhbatlar, takliflar va boʻlim intizomi.",
+"Quota helps companies in Uzbekistan find and close the leaks in their sales. We work on what happens between a lead and a payment: reply speed, conversations, proposals and team discipline."
+],
+"Подход": [
+"Yondashuv",
+"Approach"
+],
+"Три правила, по которым работаем": [
+"Biz amal qiladigan uch qoida",
+"Three rules we work by"
+],
+"Сначала цифры": [
+"Avval raqamlar",
+"Numbers first"
+],
+"Каждую проблему переводим в суммы. Так видно, что чинить первым, а что может подождать.": [
+"Har bir muammoni summaga aylantiramiz. Shunda nimani birinchi tuzatish va nima kutishi mumkinligi koʻrinadi.",
+"We turn every problem into a sum. That shows what to fix first and what can wait."
+],
+"Меняем вместе с командой": [
+"Jamoa bilan birga oʻzgartiramiz",
+"We change things together with the team"
+],
+"Скрипты и KPI работают, только если ими пользуются менеджеры. Поэтому мы обучаем и сопровождаем, а не оставляем инструкцию.": [
+"Skriptlar va KPI menejerlar ulardan foydalansagina ishlaydi. Shuning uchun yoʻriqnoma qoldirmaymiz, oʻqitamiz va kuzatib boramiz.",
+"Scripts and KPIs only work if managers use them. That’s why we train and support instead of leaving a manual."
+],
+"Фиксируем результат": [
+"Natijani qayd etamiz",
+"We lock in results"
+],
+"Договариваемся о метриках до старта и сверяем их каждый месяц. Вы всегда знаете, за что платите.": [
+"Koʻrsatkichlarni boshlashdan oldin kelishib olamiz va ularni har oy solishtiramiz. Nima uchun toʻlayotganingizni doim bilasiz.",
+"We agree on metrics before we start and check them every month. You always know what you’re paying for."
+],
+"Что проверяем": [
+"Nimani tekshiramiz",
+"What we check"
+],
+"Пять шагов, на каждом теряют клиентов": [
+"Besh qadam, har birida mijozlar yoʻqoladi",
+"Five steps, and clients are lost at each"
+],
+"У каждого шага своя причина потерь. Мы смотрим все пять, потому что проблема редко бывает одна.": [
+"Har bir qadamning oʻz yoʻqotish sababi bor. Beshalasini ham koʻramiz, chunki muammo kamdan-kam bitta boʻladi.",
+"Each step has its own cause of loss. We look at all five, because there is rarely just one problem."
+],
+"1 · Заявка": [
+"1 · Ariza",
+"1 · Lead"
+],
+"Теряем при ответе": [
+"Javobda yoʻqotamiz",
+"Lost at the reply"
+],
+"Отвечают поздно, часть обращений не обрабатывается вовсе.": [
+"Kech javob berishadi, murojaatlarning bir qismi umuman ishlanmaydi.",
+"Replies come late, and some requests are never handled at all."
+],
+"2 · Первый контакт": [
+"2 · Birinchi aloqa",
+"2 · First contact"
+],
+"Теряем в разговоре": [
+"Suhbatda yoʻqotamiz",
+"Lost in the conversation"
+],
+"Нет скрипта: менеджер не выявляет потребность и не ведёт к следующему шагу.": [
+"Skript yoʻq: menejer ehtiyojni aniqlamaydi va keyingi qadamga olib bormaydi.",
+"No script: the manager doesn’t uncover the need or move to the next step."
+],
+"3 · Предложение": [
+"3 · Taklif",
+"3 · Proposal"
+],
+"Теряем на КП": [
+"TT’da yoʻqotamiz",
+"Lost at the proposal"
+],
+"КП уходит и «зависает»: нет напоминаний и работы с возражениями.": [
+"TT yuboriladi va «osilib qoladi»: eslatmalar va eʼtirozlar bilan ishlash yoʻq.",
+"The proposal is sent and then stalls: no reminders and no objection handling."
+],
+"4 · Сделка": [
+"4 · Bitim",
+"4 · Deal"
+],
+"Теряем в данных": [
+"Maʼlumotlarda yoʻqotamiz",
+"Lost in the data"
+],
+"Сделки не фиксируются, неясно, где и почему они срываются.": [
+"Bitimlar qayd etilmaydi, ular qayerda va nima uchun buzilishi noaniq.",
+"Deals aren’t recorded, so it’s unclear where and why they fall through."
+],
+"5 · Повторная продажа": [
+"5 · Takroriy savdo",
+"5 · Repeat sale"
+],
+"Теряем после оплаты": [
+"Toʻlovdan keyin yoʻqotamiz",
+"Lost after payment"
+],
+"К клиенту не возвращаются, база не используется.": [
+"Mijozga qaytishmaydi, baza ishlatilmaydi.",
+"No one comes back to the client, and the customer base goes unused."
+],
+"Честно": [
+"Ochiq aytamiz",
+"Honestly"
+],
+"С кем мы не работаем": [
+"Kimlar bilan ishlamaymiz",
+"Who we don’t work with"
+],
+"Говорим об этом сразу, чтобы не тратить время обеих сторон.": [
+"Ikkala tomonning vaqtini behuda sarflamaslik uchun buni darhol aytamiz.",
+"We say this upfront so neither side wastes time."
+],
+"Без доступа к данным": [
+"Maʼlumotlarga kirish huquqisiz",
+"Without access to data"
+],
+"Без записей звонков и истории заявок мы гадаем, а не считаем.": [
+"Qoʻngʻiroq yozuvlari va arizalar tarixisiz biz hisoblamaymiz, taxmin qilamiz.",
+"Without call recordings and lead history we’re guessing, not calculating."
+],
+"Без решения собственника": [
+"Egasining qarorisiz",
+"Without the owner’s decision"
+],
+"Если менять процесс некому, отчёт останется лежать в папке.": [
+"Agar jarayonni oʻzgartiradigan odam boʻlmasa, hisobot papkada yotib qoladi.",
+"If no one is there to change the process, the report will just sit in a folder."
+],
+"С обещанием результата за неделю": [
+"Bir haftada natija vaʼdasi bilan",
+"With a promise of results in a week"
+],
+"Стабильный рост продаж занимает месяцы, и мы говорим об этом честно.": [
+"Savdoning barqaror oʻsishi oylar talab qiladi va biz buni ochiq aytamiz.",
+"Stable sales growth takes months, and we say so honestly."
+],
+"Без заявок вообще": [
+"Umuman arizasiz",
+"With no leads at all"
+],
+"Сначала нужен поток обращений, потом порядок в продажах.": [
+"Avval murojaatlar oqimi kerak, keyin savdoda tartib.",
+"First you need a flow of requests, then order in sales."
+],
+"Вопросы и ответы: аудит отдела продаж, цены — Quota": [
+"Savol va javoblar: savdo boʻlimi auditi, narxlar — Quota",
+"FAQ: sales team audit, prices — Quota"
+],
+"Ответы на частые вопросы: что входит в диагностику продаж, сколько стоит аудит отдела продаж в Ташкенте, как мы работаем с CRM, сколько длится внедрение.": [
+"Koʻp beriladigan savollarga javoblar: savdo diagnostikasiga nima kiradi, Toshkentda savdo boʻlimi auditi qancha turadi, CRM bilan qanday ishlaymiz, joriy etish qancha davom etadi.",
+"Answers to common questions: what sales diagnostics includes, how much a sales team audit costs in Tashkent, how we work with CRM, how long implementation takes."
+],
+"Вопросы и ответы": [
+"Savol va javoblar",
+"Questions and answers"
+],
+"Как мы работаем, сколько это стоит и с чего начать. Не нашли ответ — напишите в Telegram.": [
+"Qanday ishlaymiz, bu qancha turadi va nimadan boshlash kerak. Javob topmadingizmi — Telegram’ga yozing.",
+"How we work, what it costs and where to start. Didn’t find an answer? Message us on Telegram."
+],
+"Что такое диагностика продаж и что в неё входит?": [
+"Savdo diagnostikasi nima va unga nima kiradi?",
+"What is sales diagnostics and what does it include?"
+],
+"Разбор воронки, звонков и переписки. На выходе отчёт с потерями в сумах и план исправлений на 30 дней. Входит анализ воронки, прослушивание звонков, «тайный покупатель», интервью с менеджерами и руководителем и расчёт потерь по каждому этапу. Срок 5–7 дней.": [
+"Voronka, qoʻngʻiroqlar va yozishmalar tahlili. Natijada soʻmdagi yoʻqotishlar hisoboti va 30 kunlik tuzatish rejasi. Voronka tahlili, qoʻngʻiroqlarni tinglash, «yashirin xaridor», menejerlar va rahbar bilan suhbat hamda har bir bosqich boʻyicha yoʻqotishlarni hisoblash kiradi. Muddat 5–7 kun.",
+"A review of the funnel, calls and chats. You get a report of losses in UZS and a 30-day fix plan. It includes funnel analysis, call listening, mystery shopping, interviews with managers and the head of sales, and a loss calculation for every stage. Takes 5–7 days."
+],
+"Сколько стоит аудит отдела продаж?": [
+"Savdo boʻlimi auditi qancha turadi?",
+"How much does a sales team audit cost?"
+],
+"Диагностика от 4 млн сум, внедрение от 15 млн сум, сопровождение от 6 млн сум в месяц. Цены без НДС. Итог зависит от размера отдела, числа каналов и объёма данных.": [
+"Diagnostika 4 mln soʻmdan, joriy etish 15 mln soʻmdan, kuzatib borish oyiga 6 mln soʻmdan. Narxlar QQSsiz. Yakuniy narx boʻlim hajmi, kanallar soni va maʼlumotlar hajmiga bogʻliq.",
+"Diagnostics from UZS 4M, implementation from UZS 15M, ongoing support from UZS 6M per month. Prices exclude VAT. The final price depends on team size, number of channels and amount of data."
+],
+"Что входит во внедрение и сколько оно длится?": [
+"Joriy etishga nima kiradi va u qancha davom etadi?",
+"What does implementation include and how long does it take?"
+],
+"Скрипты и работа с возражениями, KPI и мотивация, этапы воронки, структура отдела и помощь в найме, регламенты и отчёты, обучение руководителя и менеджеров. Обычно 2–6 недель.": [
+"Skriptlar va eʼtirozlar bilan ishlash, KPI va motivatsiya, voronka bosqichlari, boʻlim tuzilmasi va yollashda yordam, reglamentlar va hisobotlar, rahbar va menejerlarni oʻqitish. Odatda 2–6 hafta.",
+"Scripts and objection handling, KPIs and motivation, funnel stages, team structure and help with hiring, procedures and reports, training for the head of sales and managers. Usually 2–6 weeks."
+],
+"Вы работаете с CRM?": [
+"CRM bilan ishlaysizmi?",
+"Do you work with CRM?"
+],
+"Да. Мы проектируем, как в CRM должна выглядеть воронка: этапы, обязательные поля, причины отказов и отчёты для руководителя. Потом проверяем, что менеджеры действительно по ней работают.": [
+"Ha. CRM’da voronka qanday koʻrinishi kerakligini loyihalaymiz: bosqichlar, majburiy maydonlar, rad etish sabablari va rahbar uchun hisobotlar. Keyin menejerlar haqiqatan ham shu boʻyicha ishlayotganini tekshiramiz.",
+"Yes. We design how the funnel should look in your CRM: stages, required fields, loss reasons and reports for the head of sales. Then we check that managers actually work by it."
+],
+"У нас нет CRM. Можно начать?": [
+"Bizda CRM yoʻq. Boshlash mumkinmi?",
+"We don’t have a CRM. Can we start?"
+],
+"Да. Диагностику проводим по звонкам, переписке, таблицам и опросу менеджеров.": [
+"Ha. Diagnostikani qoʻngʻiroqlar, yozishmalar, jadvallar va menejerlar soʻrovi asosida oʻtkazamiz.",
+"Yes. We run diagnostics on calls, chats, spreadsheets and interviews with managers."
+],
+"Как вы работаете с нашими данными?": [
+"Maʼlumotlarimiz bilan qanday ishlaysiz?",
+"How do you handle our data?"
+],
+"До начала подписываем соглашение о конфиденциальности. Доступ берём только к тем системам и в том объёме, который нужен для диагностики.": [
+"Boshlashdan oldin maxfiylik toʻgʻrisidagi kelishuvni imzolaymiz. Faqat diagnostika uchun zarur boʻlgan tizimlar va hajmda kirish huquqini olamiz.",
+"Before we start, we sign a confidentiality agreement. We only access the systems and the amount of data that diagnostics needs."
+],
+"Сколько времени до первого результата?": [
+"Birinchi natijagacha qancha vaqt ketadi?",
+"How long until the first result?"
+],
+"Отчёт с потерями вы получаете за 5–7 дней. Изменения в воронке обычно видны в первые недели внедрения, но срок зависит от бизнеса.": [
+"Yoʻqotishlar hisobotini 5–7 kunda olasiz. Voronkadagi oʻzgarishlar odatda joriy etishning dastlabki haftalarida koʻrinadi, lekin muddat biznesga bogʻliq.",
+"You get the loss report in 5–7 days. Changes in the funnel usually show in the first weeks of implementation, but timing depends on the business."
+],
+"Можно заказать только диагностику?": [
+"Faqat diagnostikani buyurtma qilsa boʻladimi?",
+"Can I order only diagnostics?"
+],
+"Да. Отчёт и план ваши, внедрять можно своей командой или с нами.": [
+"Ha. Hisobot va reja sizniki, ularni oʻz jamoangiz yoki biz bilan joriy etishingiz mumkin.",
+"Yes. The report and the plan are yours to implement with your own team or with us."
+],
+"Работаете не только в Ташкенте?": [
+"Faqat Toshkentda ishlaysizmi?",
+"Do you work outside Tashkent?"
+],
+"Основная работа в Ташкенте. В других городах возможна дистанционная диагностика и внедрение по договорённости.": [
+"Asosiy ish Toshkentda. Boshqa shaharlarda kelishuv asosida masofaviy diagnostika va joriy etish mumkin.",
+"Our main work is in Tashkent. In other cities, remote diagnostics and implementation are possible by arrangement."
+],
+"С чего начать?": [
+"Nimadan boshlash kerak?",
+"Where do I start?"
+],
+"Напишите в Telegram @quota_uz, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
+"Telegram’da @quota_uz ga nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
+"Message @quota_uz on Telegram with what your business does and how many leads you get per month. We reply the same day during working hours."
+],
+"Контакты Quota — консалтинг по продажам, Ташкент": [
+"Quota kontaktlari — savdo boʻyicha konsalting, Toshkent",
+"Quota contacts — sales consulting, Tashkent"
+],
+"Связаться с Quota: Telegram @quota_uz, Instagram @quota.uz, телефон +998 93 554 65 75, почта info@quota.uz. Ташкент.": [
+"Quota bilan bogʻlanish: Telegram @quota_uz, Instagram @quota.uz, telefon +998 93 554 65 75, pochta info@quota.uz. Toshkent.",
+"Contact Quota: Telegram @quota_uz, Instagram @quota.uz, phone +998 93 554 65 75, email info@quota.uz. Tashkent."
+],
+"Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день и скажем, с чего начать.": [
+"Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz va nimadan boshlashni aytamiz.",
+"Tell us what your business does and how many leads you get per month. We reply the same day during working hours and tell you where to start."
+],
+"Как с нами связаться": [
+"Biz bilan qanday bogʻlanish mumkin",
+"How to reach us"
+],
+"Телефон": [
+"Telefon",
+"Phone"
+],
+"Копировать": [
+"Nusxalash",
+"Copy"
+],
+"Почта": [
+"Pochta",
+"Email"
+],
+"Город": [
+"Shahar",
+"City"
+],
+"Ташкент": [
+"Toshkent",
+"Tashkent"
+],
+"Три стеклянных столбика логотипа Quota растут, самый высокий пробивает пунктирную линию плана и загорается янтарным": [
+"Quota logotipining uchta shisha ustuni oʻsadi, eng balandi reja chizigʻini kesib oʻtib, qahrabo rangda yonadi",
+"Three glass bars of the Quota logo grow, and the tallest breaks through the dashed plan line and glows amber"
+],
+"план выполнен": [
+"reja bajarildi",
+"plan achieved"
+],
+"Скопировано": [
+"Nusxalandi",
+"Copied"
+],
+"Выделено": [
+"Belgilandi",
+"Selected"
+]
 };
-
-/* faq page */
-Object.assign(window.T.ru, {"nav_faq":"Вопросы","pt_faq":"Вопросы и ответы","faqp_h":"Вопросы и ответы","faqp_lead":"Коротко о том, как мы работаем, сколько это стоит и с чего начать.","f1q":"Что такое диагностика продаж и что в неё входит?","f1a":"Это разбор воронки, CRM и звонков. В результате вы получаете отчёт с потерями в сумах и план исправлений на 30 дней. Входит: анализ воронки и данных CRM, прослушивание звонков и разбор переписок, «тайный покупатель», интервью с менеджерами и руководителем отдела, расчёт потерь в сумах по каждому этапу. Срок: 5–7 дней.","f2q":"Сколько стоит аудит отдела продаж в Ташкенте?","f2a":"Диагностика продаж — от 4 млн сум, внедрение — от 15 млн сум, сопровождение — от 6 млн сум в месяц. Цены указаны без НДС. Итоговая стоимость зависит от размера отдела продаж, числа каналов и объёма данных.","f3q":"Что входит во внедрение и сколько оно длится?","f3a":"Настраиваем CRM и воронку (Bitrix24, amoCRM), скрипты звонков и работу с возражениями, KPI и систему мотивации менеджеров, помогаем со структурой отдела и наймом, готовим регламенты и контрольные отчёты, обучаем руководителя и менеджеров. Обычно это 2–6 недель.","f4q":"Какие CRM вы настраиваете?","f4a":"Bitrix24 и amoCRM.","f5q":"Что входит в сопровождение?","f5a":"Каждый месяц: отчёт по метрикам, разбор записей звонков, корректировка скриптов и KPI, консультации для руководителя отдела. Стоимость — от 6 млн сум в месяц.","f6q":"Где компании теряют клиентов в воронке продаж?","f6a":"На пяти шагах: заявка (отвечают поздно, часть обращений не обрабатывается), первый контакт (нет скрипта), предложение (КП «зависает» без напоминаний), сделка (CRM заполнена частично, неясно, почему срываются сделки) и повторная продажа (к клиенту не возвращаются).","f7q":"Как посчитать, сколько денег теряет мой отдел продаж?","f7a":"Воспользуйтесь бесплатным калькулятором: введите заявки в месяц, конверсию и средний чек, и он покажет, сколько выручки можно вернуть. Точный расчёт по вашим данным мы делаем в диагностике.","f8q":"Как оплачивается внедрение?","f8a":"Часть оплаты можно привязать к росту продаж: условия обсуждаем заранее и фиксируем в договоре. Цены указаны без НДС.","f9q":"С чего начать?","f9a":"Напишите нам в Telegram @quota_uz, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день. Начать можно с мини-аудита."});
-Object.assign(window.T.uz, {"nav_faq":"Savollar","pt_faq":"Savol-javoblar","faqp_h":"Savol-javoblar","faqp_lead":"Qanday ishlashimiz, narxi qancha va qanday boshlash kerakligi haqida qisqacha.","f1q":"Sotuv diagnostikasi nima va unga nimalar kiradi?","f1a":"Bu voronka, CRM va qo'ng'iroqlarni tahlil qilish. Natijada so'mda yo'qotishlar hisoboti va 30 kunlik tuzatish rejasini olasiz. Tarkibida: voronka va CRM ma'lumotlari tahlili, qo'ng'iroqlarni tinglash va yozishmalarni ko'rib chiqish, «maxfiy xaridor», menejerlar va bo'lim rahbari bilan suhbat, har bir bosqich bo'yicha yo'qotishlarni so'mda hisoblash. Muddat: 5–7 kun.","f2q":"Toshkentda sotuv bo'limi auditi qancha turadi?","f2a":"Sotuv diagnostikasi 4 mln so'mdan, joriy etish 15 mln so'mdan, hamrohlik oyiga 6 mln so'mdan. Narxlar QQSsiz ko'rsatilgan. Yakuniy narx sotuv bo'limi hajmiga, kanallar soniga va ma'lumotlar hajmiga bog'liq.","f3q":"Joriy etishga nimalar kiradi va u qancha davom etadi?","f3a":"CRM va voronkani (Bitrix24, amoCRM), qo'ng'iroq skriptlari va e'tirozlar bilan ishlashni, menejerlar uchun KPI va rag'bat tizimini sozlaymiz, bo'lim tuzilmasi va yollashda yordam beramiz, reglamentlar va nazorat hisobotlarini tayyorlaymiz, rahbar va menejerlarni o'qitamiz. Odatda 2–6 hafta.","f4q":"Qaysi CRMlarni sozlaysiz?","f4a":"Bitrix24 va amoCRM.","f5q":"Hamrohlikka nimalar kiradi?","f5a":"Har oy: ko'rsatkichlar bo'yicha hisobot, qo'ng'iroq yozuvlarini ko'rib chiqish, skriptlar va KPIni tuzatish, bo'lim rahbari uchun maslahatlar. Narxi oyiga 6 mln so'mdan.","f6q":"Kompaniyalar sotuv voronkasida mijozlarni qayerda yo'qotadi?","f6a":"Besh bosqichda: ariza (kech javob, ko'rib chiqilmagan murojaatlar), birinchi aloqa (skript yo'q), taklif (tijoriy taklif eslatmalarsiz «osilib» qoladi), bitim (CRM qisman to'ldirilgan, bitimlar nega buzilishi noma'lum) va qayta sotuv (mijozga qaytilmaydi).","f7q":"Sotuv bo'limim qancha pul yo'qotayotganini qanday hisoblash mumkin?","f7a":"Bepul kalkulyatordan foydalaning: oylik arizalar soni, konversiya va o'rtacha chekni kiriting, u qancha tushumni qaytarish mumkinligini ko'rsatadi. Ma'lumotlaringiz bo'yicha aniq hisobni diagnostikada qilamiz.","f8q":"Joriy etish uchun qanday to'lanadi?","f8a":"To'lovning bir qismini sotuv o'sishiga bog'lash mumkin: shartlarni oldindan muhokama qilib, shartnomada belgilaymiz. Narxlar QQSsiz ko'rsatilgan.","f9q":"Qanday boshlash kerak?","f9a":"Telegramda @quota_uz ga nima bilan shug'ullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida o'sha kuni javob beramiz. Mini-auditdan boshlash mumkin."});
-Object.assign(window.T.en, {"nav_faq":"FAQ","pt_faq":"FAQ","faqp_h":"Questions and answers","faqp_lead":"A short guide to how we work, what it costs and how to start.","f1q":"What is a sales diagnostic and what does it include?","f1a":"It's a review of your funnel, CRM and calls. You get a report with losses in UZS and a 30-day fix plan. It includes funnel and CRM data analysis, call listening and chat review, mystery shopping, interviews with managers and the head of sales, and losses in UZS for every stage. It takes 5–7 days.","f2q":"How much does a sales audit cost in Tashkent?","f2a":"The sales diagnostic starts from UZS 4M, implementation from UZS 15M, and ongoing support from UZS 6M per month. Prices exclude VAT. The final price depends on the size of your sales team, the number of channels and the amount of data.","f3q":"What does implementation include and how long does it take?","f3a":"We set up your CRM and funnel (Bitrix24, amoCRM), call scripts and objection handling, KPIs and an incentive system for managers, the sales team structure and hiring support, playbooks and control reports, and we train the head of sales and managers. It usually takes 2–6 weeks.","f4q":"Which CRM systems do you set up?","f4a":"Bitrix24 and amoCRM.","f5q":"What does ongoing support include?","f5a":"Every month: a metrics report, review of call recordings, script and KPI adjustments, and consultations for the head of sales. From UZS 6M per month.","f6q":"Where do companies lose customers in the sales funnel?","f6a":"At five steps: lead (late replies, unprocessed requests), first contact (no script), proposal (the quote stalls with no follow-up), deal (the CRM is only partly filled in, so it's unclear why deals fail) and repeat sale (nobody goes back to the customer).","f7q":"How can I calculate how much money my sales team is losing?","f7a":"Use the free calculator: enter your monthly leads, conversion and average check, and it shows how much revenue you could recover. We calculate exact figures from your own data during the diagnostic.","f8q":"How is implementation paid for?","f8a":"Part of the fee can depend on sales growth: we agree the terms upfront and put them in the contract. Prices exclude VAT.","f9q":"How do I get started?","f9a":"Message us on Telegram at @quota_uz: what your business does and how many leads you get per month. We reply the same working day. You can start with a mini-audit."});
