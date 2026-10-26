@@ -5,10 +5,10 @@
 <script>if(/\.html$/.test(location.pathname)){history.replaceState(null,"",location.pathname.replace(/index\.html$/,"").replace(/\.html$/,"")+location.search+location.hash)}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Калькулятор потерь в продажах — Quota</title>
-<meta name="description" content="Бесплатный калькулятор: посчитайте, сколько денег отдел продаж теряет на заявках, конверсии и среднем чеке. Quota, Ташкент.">
+<meta name="description" content="Бесплатный калькулятор: посчитайте, сколько выручки можно вернуть, если навести порядок в заявках, конверсии и среднем чеке. Quota, Ташкент.">
 <link rel="canonical" href="https://quota.uz/calculator">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#070D1C">
+<meta name="theme-color" content="#070B14">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,74 +19,207 @@
 <meta property="og:site_name" content="Quota">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Калькулятор потерь в продажах — Quota">
-<meta property="og:description" content="Бесплатный калькулятор: посчитайте, сколько денег отдел продаж теряет на заявках, конверсии и среднем чеке. Quota, Ташкент.">
+<meta property="og:description" content="Бесплатный калькулятор: посчитайте, сколько выручки можно вернуть, если навести порядок в заявках, конверсии и среднем чеке. Quota, Ташкент.">
 <meta property="og:url" content="https://quota.uz/calculator">
 <meta property="og:image" content="https://quota.uz/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Калькулятор потерь в продажах — Quota">
-<meta name="twitter:description" content="Бесплатный калькулятор: посчитайте, сколько денег отдел продаж теряет на заявках, конверсии и среднем чеке. Quota, Ташкент.">
+<meta name="twitter:description" content="Бесплатный калькулятор: посчитайте, сколько выручки можно вернуть, если навести порядок в заявках, конверсии и среднем чеке. Quota, Ташкент.">
 <meta name="twitter:image" content="https://quota.uz/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<script>try{var t=localStorage.getItem('quota-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script type="application/ld+json">{"@type": "ProfessionalService", "@id": "https://quota.uz/#org", "name": "Quota", "url": "https://quota.uz/", "logo": "https://quota.uz/icon-512.png", "image": "https://quota.uz/og-image.png", "description": "Аудит отдела продаж в Ташкенте: находим потери в воронке, разбираем звонки, выстраиваем скрипты, KPI и контроль. Считаем потери в сумах. Мини-аудит от Quota.", "email": "info@quota.uz", "telephone": "+998935546575", "areaServed": "Uzbekistan", "address": {"@type": "PostalAddress", "addressLocality": "Ташкент", "addressCountry": "UZ"}, "sameAs": ["https://t.me/quota_uz", "https://www.instagram.com/quota.uz"], "@context": "https://schema.org"}</script>
 </head>
 <body>
-<div id="site-header"></div>
+<div class="intro" id="intro" aria-hidden="true"><div class="bgl"></div><canvas id="intro-c"></canvas><span class="holo" id="holo" data-text="QUOTA">QUOTA</span></div>
+<script>
+(function(){
+  var el = document.getElementById('intro');
+  var docEl = document.documentElement;
+  try { if (sessionStorage.getItem('quota-intro')) { el.remove(); return; } sessionStorage.setItem('quota-intro', '1'); } catch (e) {}
+  docEl.classList.add('intro-on', 'intro-run');
+  var c = document.getElementById('intro-c'), holo = document.getElementById('holo');
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var gone = false;
+  function cleanup(){ if (el.parentNode) el.remove(); docEl.classList.remove('intro-on'); setTimeout(function(){ docEl.classList.remove('intro-run'); }, 1400); }
+  function finish(){ if (gone) return; gone = true; el.classList.add('out'); docEl.classList.remove('intro-on'); setTimeout(cleanup, 1200); }
+  setTimeout(cleanup, 5600);
+  if (reduced || !c.getContext) { holo.classList.add('show'); setTimeout(finish, 1100); return; }
+
+  function hex(v){ v = (v || '').trim().replace('#', ''); if (v.length === 3) v = v.replace(/./g, '$&$&'); var n = parseInt(v || '7ca3ff', 16); return [n >> 16 & 255, n >> 8 & 255, n & 255]; }
+  function mix(a, b, k){ return [a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k, a[2] + (b[2] - a[2]) * k]; }
+
+  var started = false;
+  function go(){
+    if (started) return; started = true;
+    var cr = c.getBoundingClientRect(), W = cr.width, H = cr.height, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    c.width = W * dpr; c.height = H * dpr;
+    var ctx = c.getContext('2d'); ctx.scale(dpr, dpr);
+    var cs = getComputedStyle(holo), fs = parseFloat(cs.fontSize), r = holo.getBoundingClientRect();
+    var pad = 24, ow = Math.ceil(r.width + pad * 2), oh = Math.ceil(r.height + pad * 2);
+    var off = document.createElement('canvas'); off.width = ow; off.height = oh;
+    var o = off.getContext('2d');
+    o.font = cs.fontWeight + ' ' + fs + 'px ' + cs.fontFamily; o.textAlign = 'left'; o.textBaseline = 'alphabetic'; o.fillStyle = '#fff';
+    var mt = o.measureText('QUOTA'), asc = mt.fontBoundingBoxAscent, desc = mt.fontBoundingBoxDescent;
+    var base = (asc && desc) ? pad + (r.height - (asc + desc)) / 2 + asc : pad + r.height / 2 + (mt.actualBoundingBoxAscent - mt.actualBoundingBoxDescent) / 2;
+    o.fillText('QUOTA', pad + (r.width - mt.width) / 2, base);
+    var data = o.getImageData(0, 0, ow, oh).data;
+    var cell = Math.max(3, Math.round(fs / 50)), sq = cell * 0.7, half = cell >> 1;
+    var root = getComputedStyle(document.documentElement);
+    var A = hex(root.getPropertyValue('--holo-a')), B = hex(root.getPropertyValue('--holo-b')), C = hex(root.getPropertyValue('--holo-c'));
+    var dark = (function(){ var bg = hex(root.getPropertyValue('--bg')); return bg[0] + bg[1] + bg[2] < 380; })();
+    var pts = [], ox = r.left - cr.left - pad, oy = r.top - cr.top - pad;
+    for (var y = 0; y < oh; y += cell) for (var x = 0; x < ow; x += cell) {
+      var i = ((y + half) * ow + x + half) * 4;
+      if (data[i + 3] > 110) {
+        var k = x / ow, col = k < .5 ? mix(A, B, k * 2) : mix(B, C, (k - .5) * 2);
+        var sx, sy;
+        if (Math.random() < .55) { sx = Math.random() * W; sy = Math.random() * H; }
+        else { var ang = Math.random() * Math.PI * 2, d = 60 + Math.random() * 320; sx = ox + x + Math.cos(ang) * d; sy = oy + y + Math.sin(ang) * d * .6; }
+        pts.push({tx:ox + x, ty:oy + y, sx:sx, sy:sy,
+          delay:k * .75 + Math.random() * .45, f:Math.random() * 10,
+          col:'rgb(' + (col[0] | 0) + ',' + (col[1] | 0) + ',' + (col[2] | 0) + ')'});
+      }
+    }
+    var amb = [], cx0 = ox + ow / 2, cy0 = oy + oh / 2, nA = Math.min(900, Math.round(W * H / 1400));
+    for (var q = 0; q < nA; q++) {
+      var ax = Math.random() * W, ay = Math.random() * H, kk = Math.min(1, Math.max(0, (ax - ox) / ow));
+      var colA = kk < .5 ? mix(A, B, kk * 2) : mix(B, C, (kk - .5) * 2);
+      amb.push({x:ax, y:ay, vx:(cx0 - ax) * (.12 + Math.random() * .2), vy:(cy0 - ay) * (.12 + Math.random() * .2),
+        d:Math.random() * 1.1, life:.9 + Math.random() * 1.1, s:sq * (.5 + Math.random() * .6), f:Math.random() * 10,
+        col:'rgb(' + (colA[0] | 0) + ',' + (colA[1] | 0) + ',' + (colA[2] | 0) + ')'});
+    }
+    ctx.globalCompositeOperation = dark ? 'lighter' : 'source-over';
+    var T0 = performance.now(), IN = .7, SHOW = 1.75, FADE0 = 2.05, FADE1 = 2.7, END = 2.95;
+    function frame(now){
+      var t = (now - T0) / 1000;
+      ctx.clearRect(0, 0, W, H);
+      var fade = t < FADE0 ? 1 : Math.max(0, 1 - (t - FADE0) / (FADE1 - FADE0));
+      for (var m = 0; m < amb.length; m++) {
+        var a = amb[m], at = t - a.d;
+        if (at <= 0 || at > a.life) continue;
+        var u = at / a.life, env = Math.sin(u * Math.PI);
+        ctx.globalAlpha = env * (.25 + .35 * Math.abs(Math.sin((t + a.f) * 22))) * fade * (dark ? .5 : .55);
+        ctx.fillStyle = a.col;
+        ctx.fillRect(a.x + a.vx * at, a.y + a.vy * at, a.s, a.s);
+      }
+      for (var n = 0; n < pts.length; n++) {
+        var p = pts[n], lt = (t - p.delay) / IN;
+        if (lt <= 0) continue;
+        var e = lt >= 1 ? 1 : 1 - Math.pow(1 - lt, 3);
+        var flick = lt < 1 ? .35 + .65 * Math.abs(Math.sin((t + p.f) * 34)) : .78 + .22 * Math.sin(t * 7 + p.f);
+        ctx.globalAlpha = Math.min(1, lt * 1.6) * flick * fade * (dark ? .62 : .85);
+        ctx.fillStyle = p.col;
+        var s = sq * (.5 + .5 * e);
+        ctx.fillRect(p.sx + (p.tx - p.sx) * e, p.sy + (p.ty - p.sy) * e, s, s);
+      }
+      if (t > SHOW) holo.classList.add('show');
+      if (t < FADE1) requestAnimationFrame(frame); else ctx.clearRect(0, 0, W, H);
+      if (t > END) finish();
+    }
+    requestAnimationFrame(frame);
+    setTimeout(finish, END * 1000);
+  }
+  var ready = document.fonts && document.fonts.load ? document.fonts.load('800 100px Manrope') : Promise.resolve();
+  Promise.race([ready, new Promise(function(res){ setTimeout(res, 600); })]).then(go, go);
+})();
+</script>
+<div class="spot" id="spot" aria-hidden="true"></div>
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="/" aria-label="Quota, на главную">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect class="mk" width="32" height="32" rx="7"/><rect class="mk-in" x="7" y="17" width="4.5" height="8" rx="1.2"/><rect class="mk-in" x="13.75" y="12" width="4.5" height="13" rx="1.2"/><rect class="mk-in" x="20.5" y="7" width="4.5" height="18" rx="1.2"/></svg>
+      <b>quota</b>
+    </a>
+    <nav class="nav" id="nav" aria-label="Разделы">
+      <a href="/services">Услуги</a>
+      <a href="/calculator" aria-current="page">Калькулятор</a>
+      <a href="/about">О нас</a>
+      <a href="/faq">Вопросы</a>
+      <a href="/contacts">Контакты</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button class="iconbtn" id="lang-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Язык: русский" style="position:relative">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+        <span class="lang-code" aria-hidden="true">RU</span>
+      </button>
+      <ul class="lang-menu" id="lang-menu"><li><button type="button" data-lang="ru" aria-label="Русский">RU</button></li><li><button type="button" data-lang="uz" aria-label="Oʻzbekcha">UZ</button></li><li><button type="button" data-lang="en" aria-label="English">EN</button></li></ul>
+    </div>
+    <button class="iconbtn theme" id="theme" type="button" aria-label="Сменить тему">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <a class="btn sm" href="https://t.me/quota_uz">Мини-аудит</a>
+    <button class="iconbtn burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
 
 <main>
-  <div class="phero"><div class="wrap">
-    <h1 data-i18n="calcp_h">Калькулятор потерь</h1>
-    <p class="lead" data-i18n="calcp_lead">Введите свои цифры. Это сценарий, а не прогноз.</p>
-  </div></div>
-
-  <section class="first">
+<div class="view">
+  <div class="glow-top">
     <div class="wrap">
-      <div class="calc">
+      <div class="phero center">
+        <p class="badge">Калькулятор потерь</p>
+        <h1 class="h1">Сколько выручки можно вернуть<span class="t">?</span></h1>
+        <p class="lead">Подвигайте ползунки под свои цифры. Это сценарий, а не прогноз: он показывает порядок суммы, которую стоит искать.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="sec" style="padding-top:64px">
+      <div class="card calc">
         <div class="calc-in">
-          <div class="field"><label for="leads"><span data-i18n="c_leads">Заявок в месяц</span></label><input id="leads" type="number" inputmode="numeric" min="0" value="300"></div>
-          <div class="field"><label for="conv"><span data-i18n="c_conv">Из них доходит до оплаты, %</span></label><input id="conv" type="number" inputmode="decimal" min="0" max="100" step="0.5" value="5"></div>
-          <div class="field"><label for="check"><span><span data-i18n="c_check">Средний чек</span>, <span class="cur"></span></span></label><input id="check" type="number" inputmode="numeric" min="0" step="100000" value="3000000"></div>
-          <div class="field"><label for="uplift"><span data-i18n="c_uplift">Рост конверсии после наведения порядка</span><b id="upv">20%</b></label><input id="uplift" type="range" min="5" max="50" step="5" value="20"></div>
+          <div class="field"><label for="q-leads"><span>Заявок в месяц</span><b id="v-leads">300</b></label><input id="q-leads" type="range" min="50" max="3000" step="10" value="300"></div>
+          <div class="field"><label for="q-conv"><span>Доходит до оплаты</span><b id="v-conv">5%</b></label><input id="q-conv" type="range" min="0.5" max="30" step="0.5" value="5"></div>
+          <div class="field"><label for="q-check"><span>Средний чек</span><b id="v-check">3 000 000 сум</b></label><input id="q-check" type="range" min="500000" max="50000000" step="500000" value="3000000"></div>
+          <div class="field"><label for="q-up"><span>Рост конверсии после наведения порядка</span><b id="v-up">+20%</b></label><input id="q-up" type="range" min="5" max="50" step="5" value="20"></div>
         </div>
         <div class="calc-out" aria-live="polite">
-          <div><div class="out-lab" data-i18n="c_extra">Дополнительная выручка в месяц</div><div class="out-big" id="o-month">0</div></div>
-          <div class="out-lab"><span data-i18n="c_year">За год</span>: <b id="o-year" style="color:var(--fg)">0</b></div>
-          <div class="cmp">
-            <div class="now"><div class="row"><span data-i18n="c_now">Сейчас</span><b id="o-now">0</b></div><div class="b"><i id="b-now"></i></div></div>
-            <div class="aft"><div class="row"><span data-i18n="c_after">После наведения порядка</span><b id="o-aft">0</b></div><div class="b"><i id="b-aft"></i></div></div>
+          <div>
+            <div style="font-size:14px;color:var(--muted)">Дополнительная выручка в месяц</div>
+            <div class="big" id="o-month" style="margin-top:6px">0</div>
+            <div style="margin-top:6px;font-size:14px;color:var(--muted)">За год: <b class="mono" id="o-year" style="color:var(--fg);font-weight:600">0</b></div>
           </div>
-          <p class="small" data-i18n="c_note">Расчёт показывает порядок величины. Реальный эффект мы измеряем на ваших данных в диагностике.</p>
+          <div class="cmp">
+            <div><div class="row"><span>Сейчас</span><b id="o-now">0</b></div><div class="track"><i id="b-now" style="background:var(--track-now)"></i></div></div>
+            <div><div class="row"><span>После</span><b id="o-aft">0</b></div><div class="track"><i id="b-aft" style="width:100%;background:var(--accent)"></i></div></div>
+          </div>
+          <p class="small">Реальный эффект измеряем на ваших данных в диагностике.</p>
+          <a class="btn" href="https://t.me/quota_uz" style="margin-top:auto">Обсудить расчёт в Telegram</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="sec-head"><h2 data-i18n="how_h">Как читать результат</h2></div>
-      <div class="howto">
-        <div><h3 data-i18n="how1h">Что считает калькулятор</h3><p data-i18n="how1p">Заявки умножаются на долю оплат и на средний чек. Затем к выручке добавляется рост конверсии, который вы выбрали ползунком.</p></div>
-        <div><h3 data-i18n="how2h">Что дальше</h3><p data-i18n="how2p">Какой рост реален именно у вас, показывает диагностика на ваших данных: звонках, CRM и заявках.</p></div>
+      <div class="two" style="margin-top:20px">
+        <div class="card tile"><h3>Что считает калькулятор</h3><p>Заявки умножаются на долю оплат и средний чек. К этой выручке добавляется рост конверсии, который вы выбрали ползунком.</p></div>
+        <div class="card tile"><h3>Что дальше</h3><p>Какой рост реален именно у вас, покажет диагностика: мы считаем его по вашим звонкам, заявкам и переписке.</p></div>
       </div>
     </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="band">
-        <div><h2 data-i18n="h_cta_h">Начнём с мини-аудита</h2><p data-i18n="h_cta_p">Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.</p></div>
-        <div class="cta"><a class="btn" data-tg href="#" data-i18n="hero_cta1">Заказать мини-аудит</a><a class="btn line" href="/services" data-i18n="nav_services">Услуги</a></div>
-      </div>
-    </div>
-  </section>
+    <section class="sec"><div class="band"><p class="eyebrow">Следующий шаг</p><h2 class="h2" style="font-size:clamp(30px,3.6vw,44px)">Начнём с мини-аудита</h2><p class="lead">Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.</p><div class="btns"><a class="btn" href="https://t.me/quota_uz">Написать в Telegram</a><a class="btn ghost" href="/contacts">Все контакты</a></div></div></section>
+  </div>
+</div>
 </main>
 
-<div id="site-footer"><footer class="bottom"><div class="wrap"><div class="fgrid"><div><a class="logo" href="/" aria-label="Quota" style="color:var(--fg)">Quota</a><p style="margin-top:12px;max-width:40ch">Продажи без потерь: диагностика, CRM, скрипты и KPI для отделов продаж в Ташкенте.</p></div><div><h4>Меню</h4><ul><li><a href="/">Главная</a></li><li><a href="/services">Услуги</a></li><li><a href="/calculator">Калькулятор</a></li><li><a href="/about">О нас</a></li><li><a href="/faq">Вопросы</a></li><li><a href="/contacts">Контакты</a></li></ul></div><div><h4>Контакты</h4><ul><li><a href="https://t.me/quota_uz">Telegram</a></li><li><a href="https://www.instagram.com/quota.uz">Instagram</a></li><li><a href="tel:+998935546575">+998 93 554 65 75</a></li><li><a href="mailto:info@quota.uz">info@quota.uz</a></li></ul></div></div><div class="fcopy">© 2026 Quota</div></div></footer></div>
-<script>window.PAGE="calc";</script>
-<script src="i18n.js"></script>
-<script src="app.js"></script>
+<footer class="foot-site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="logo" href="/" style="color:var(--fg)"><b>quota</b></a><p style="margin-top:12px;max-width:40ch">Продажи без потерь: диагностика, скрипты, KPI и обучение для отделов продаж в Ташкенте.</p></div>
+      <div><h4>Разделы</h4><ul>
+        <li><a href="/services">Услуги</a></li><li><a href="/calculator">Калькулятор</a></li><li><a href="/about">О нас</a></li><li><a href="/faq">Вопросы</a></li><li><a href="/contacts">Контакты</a></li>
+      </ul></div>
+      <div><h4>Связь</h4><ul>
+        <li><a href="https://t.me/quota_uz">Telegram</a></li><li><a href="https://www.instagram.com/quota.uz">Instagram</a></li><li class="mono">+998 93 554 65 75</li><li class="mono">info@quota.uz</li>
+      </ul></div>
+    </div>
+    <div class="fcopy">© 2026 Quota · Ташкент</div>
+  </div>
+</footer>
+<script src="/i18n.js" defer></script>
+<script src="/app.js" defer></script>
 </body>
 </html>
