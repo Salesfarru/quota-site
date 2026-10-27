@@ -2,7 +2,7 @@
 (function(){
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function fail(stage, text){ stage.insertAdjacentHTML('beforeend', '<div class="fallback">' + text + '</div>'); }
+  function fail(stage, text){ if (stage) stage.insertAdjacentHTML('beforeend', '<div class="fallback">' + text + '</div>'); }
   if (!window.THREE) {
     fail(document.getElementById('bars-stage'), '3D-сцена не загрузилась. Обновите страницу.');
     fail(document.getElementById('lens-stage'), '3D-сцена не загрузилась. Обновите страницу.');
