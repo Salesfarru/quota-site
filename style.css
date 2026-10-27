@@ -206,6 +206,13 @@ h1,h2{text-wrap:balance}
 .steps3 p{color:var(--muted);font-size:15px}
 .steps3 .meta{margin-top:auto}
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tbl-toggle{margin-bottom:20px}
+.tbl-toggle summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:18px 24px;font-size:17px;font-weight:600;color:var(--fg)}
+.tbl-toggle summary::-webkit-details-marker{display:none}
+.tbl-toggle summary:hover{background:var(--panel2)}
+.tbl-toggle .chev{flex:none;width:12px;height:12px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg) translate(-3px,-3px);transition:transform .25s ease}
+.tbl-toggle[open] .chev{transform:rotate(225deg) translate(-3px,-3px)}
+.tbl-toggle[open] summary{border-bottom:1px solid var(--line)}
 .tbl{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;font-size:15px}
 .tbl th,.tbl td{padding:15px 18px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
 .tbl th:first-child,.tbl td:first-child{text-align:left;position:sticky;left:0;background:var(--panel);z-index:1}

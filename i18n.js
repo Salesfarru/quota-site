@@ -1051,5 +1051,9 @@ window.QUOTA_I18N = {
 "Выделено": [
 "Belgilandi",
 "Selected"
+],
+"Посмотреть, что входит в каждый шаг": [
+"Har bir qadamga nima kirishini koʻrish",
+"See what each step includes"
 ]
 };
