@@ -207,6 +207,8 @@ h1,h2{text-wrap:balance}
 .steps3 h3{font-size:22px;font-weight:700;letter-spacing:-.015em}
 .steps3 p{color:var(--muted);font-size:15px}
 .steps3 .meta{margin-top:auto}
+.steps3 .card-cta{width:100%;margin-top:14px}
+.steps3 .card:hover .card-cta{border-color:var(--accent)}
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 .tbl-toggle{margin-bottom:20px}
 .tbl-toggle:not([open]){animation:tbl-pulse 2.8s ease-in-out infinite}

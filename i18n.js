@@ -1055,5 +1055,17 @@ window.QUOTA_I18N = {
 "Посмотреть, что входит в каждый шаг": [
 "Har bir qadamga nima kirishini koʻrish",
 "See what each step includes"
+],
+"Заказать диагностику": [
+"Diagnostikaga buyurtma berish",
+"Order diagnostics"
+],
+"Обсудить внедрение": [
+"Joriy etishni muhokama qilish",
+"Discuss implementation"
+],
+"Подключить сопровождение": [
+"Kuzatib borishni ulash",
+"Start ongoing support"
 ]
 };
