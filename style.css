@@ -141,6 +141,8 @@ h1,h2{text-wrap:balance}
 .scene{position:relative;background:var(--scene-bg);color:var(--scene-fg);border-radius:var(--scene-radius);border:1px solid var(--scene-border);overflow:hidden;isolation:isolate}
 .scene .deep{position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse 50% 58% at 56% 52%,rgba(46,82,190,.42),rgba(22,40,96,.24) 42%,rgba(7,11,20,0) 74%)}
 .stage{position:relative;min-width:0;height:clamp(440px,52vw,640px)}
+#stage{height:clamp(320px,34vw,440px)}
+.demo{max-width:940px;margin-inline:auto}
 .stage.md{height:clamp(420px,46vw,580px)}
 .stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
 .tag{position:absolute;left:0;top:0;white-space:nowrap;font-family:var(--f-mono);font-size:12px;color:var(--scene-muted);pointer-events:none;display:flex;gap:8px;align-items:center;will-change:transform,opacity}
@@ -278,6 +280,18 @@ h1,h2{text-wrap:balance}
 .kpi .col.now i{background:var(--accent)}
 .kpi .col span{font-size:10px;color:var(--dim)}
 
+/* rows (instead of three equal columns) */
+.rows{border-top:1px solid var(--line2);max-width:980px;margin-inline:auto}
+.row-item{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr);gap:10px 40px;align-items:baseline;padding:30px 4px;border-bottom:1px solid var(--line)}
+.row-item:has(.ic){grid-template-columns:48px minmax(0,.9fr) minmax(0,1.4fr);align-items:center}
+.row-item h3{font-size:clamp(19px,1.9vw,23px);font-weight:700;letter-spacing:-.015em}
+.row-item p{color:var(--muted);font-size:16px}
+.row-item .ic{width:44px;height:44px;border-radius:12px;background:var(--pill-blue);display:grid;place-items:center}
+.row-item .ic svg{width:20px;height:20px;stroke:var(--accent)}
+@media (max-width:700px){.row-item,.row-item:has(.ic){grid-template-columns:minmax(0,1fr);gap:8px;padding:24px 0}.row-item .ic{margin-bottom:4px}}
+.reveal-on .row-item{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0) * 140ms)}
+.reveal-on .row-item.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal-on .row-item{opacity:1;transform:none;transition:none}}
 /* tiles */
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 @media (max-width:860px){.three{grid-template-columns:minmax(0,1fr)}}

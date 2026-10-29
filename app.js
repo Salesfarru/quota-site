@@ -28,6 +28,18 @@
   }
   if ($('q-leads')) { ids.forEach(function(id){ $(id).addEventListener('input', calc); }); calc(); document.addEventListener('quota:lang', calc); }
 
+  // Rows appear one by one as they scroll into view (content stays visible without JS)
+  if ('IntersectionObserver' in window) {
+    var groupsR = document.querySelectorAll('.rows.reveal');
+    if (groupsR.length) {
+      document.documentElement.classList.add('reveal-on');
+      var ioR = new IntersectionObserver(function(es){
+        es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); ioR.unobserve(en.target); } });
+      }, {threshold:0.2, rootMargin:'0px 0px -8% 0px'});
+      groupsR.forEach(function(g){ g.querySelectorAll('.row-item').forEach(function(r, i){ r.style.setProperty('--i', i); ioR.observe(r); }); });
+    }
+  }
+
   // Theme toggle (explicit choice overrides the system setting)
   var root = document.documentElement;
   function systemDark(){ return !(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches); }
