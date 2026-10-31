@@ -271,7 +271,7 @@
     bNow.setAttribute('aria-pressed', m === 'now'); bAfter.setAttribute('aria-pressed', m === 'after');
     stats = { total:0, lost:0, won:0, perStage:[0,0,0,0] };
     for (var i = 0; i < N; i++) spawn(i, true);
-    if (reduced) prefill();
+    prefill();
     writeStats();
   }
   bNow.addEventListener('click', function(){ setMode('now'); });
@@ -282,7 +282,8 @@
     render(0); writeStats();
   }
 
-  if (reduced) { prefill(); return; }
+  prefill();
+  if (reduced) return;
 
   var last = performance.now(), acc = 0;
   function loop(now){

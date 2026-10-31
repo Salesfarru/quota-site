@@ -88,9 +88,25 @@ window.QUOTA_I18N = {
 "Hozir",
 "Now"
 ],
-"После аудита": [
-"Auditdan keyin",
-"After audit"
+"После внедрения": [
+"Joriy etishdan keyin",
+"After implementation"
+],
+"Мини-аудит бесплатный, 15 минут": [
+"Mini-audit bepul, 15 daqiqa",
+"The mini-audit is free, 15 minutes"
+],
+"Условный пример для наглядности. Реальные цифры считаем на ваших данных.": [
+"Tushunarli boʻlishi uchun shartli misol. Haqiqiy raqamlarni sizning maʼlumotlaringiz asosida hisoblaymiz.",
+"An illustrative example. We calculate the real numbers from your data."
+],
+"Пример: нет ответа за час": [
+"Misol: bir soat ichida javob yoʻq",
+"Example: no reply within an hour"
+],
+"Пример: КП без повторного контакта": [
+"Misol: takroriy aloqasiz tijorat taklifi",
+"Example: proposal with no follow-up"
 ],
 "заявка": [
 "ariza",
@@ -648,9 +664,9 @@ window.QUOTA_I18N = {
 "Mini-auditdan boshlaymiz",
 "Let’s start with a mini-audit"
 ],
-"Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
-"Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
-"Tell us what your business does and how many leads you get per month. We reply the same day during working hours."
+"Мини-аудит бесплатный и занимает 15 минут. Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
+"Mini-audit bepul va 15 daqiqa davom etadi. Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
+"The mini-audit is free and takes 15 minutes. Tell us what your business does and how many leads you get per month. We reply the same day during working hours."
 ],
 "Написать в Telegram": [
 "Telegram’ga yozish",
@@ -996,9 +1012,9 @@ window.QUOTA_I18N = {
 "Nimadan boshlash kerak?",
 "Where do I start?"
 ],
-"Напишите в Telegram @quota_uz, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
-"Telegram’da @quota_uz ga nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
-"Message @quota_uz on Telegram with what your business does and how many leads you get per month. We reply the same day during working hours."
+"Начните с бесплатного мини-аудита на 15 минут. Напишите в Telegram @quota_uz, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день.": [
+"Bepul 15 daqiqalik mini-auditdan boshlang. Telegram’da @quota_uz ga nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz.",
+"Start with a free 15-minute mini-audit. Message @quota_uz on Telegram with what your business does and how many leads you get per month. We reply the same day during working hours."
 ],
 "Контакты Quota — консалтинг по продажам, Ташкент": [
 "Quota kontaktlari — savdo boʻyicha konsalting, Toshkent",
@@ -1008,9 +1024,9 @@ window.QUOTA_I18N = {
 "Quota bilan bogʻlanish: Telegram @quota_uz, Instagram @quota.uz, telefon +998 93 554 65 75, pochta info@quota.uz. Toshkent.",
 "Contact Quota: Telegram @quota_uz, Instagram @quota.uz, phone +998 93 554 65 75, email info@quota.uz. Tashkent."
 ],
-"Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день и скажем, с чего начать.": [
-"Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz va nimadan boshlashni aytamiz.",
-"Tell us what your business does and how many leads you get per month. We reply the same day during working hours and tell you where to start."
+"Мини-аудит бесплатный и занимает 15 минут. Напишите, чем занимаетесь и сколько заявок получаете в месяц. Ответим в рабочее время в тот же день и скажем, с чего начать.": [
+"Mini-audit bepul va 15 daqiqa davom etadi. Nima bilan shugʻullanishingiz va oyiga nechta ariza olishingizni yozing. Ish vaqtida shu kuni javob beramiz va nimadan boshlashni aytamiz.",
+"The mini-audit is free and takes 15 minutes. Tell us what your business does and how many leads you get per month. We reply the same day during working hours and tell you where to start."
 ],
 "Как с нами связаться": [
 "Biz bilan qanday bogʻlanish mumkin",

@@ -422,3 +422,6 @@ html.intro-run .top,html.intro-run main,html.intro-run .foot-site{transition:opa
 @keyframes intro-failsafe{to{opacity:0;visibility:hidden}}
 @media (prefers-reduced-motion: reduce){.holo,.holo::after,.intro .bgl::before{animation:none}html.intro-on .top,html.intro-on main,html.intro-on .foot-site{transform:none}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.thumb .sheen{animation:none}.track i{transition:none}body{transition:none}}
+.cta-note{margin-top:-12px;font-size:14px;color:var(--dim)}
+.demo-note{position:relative;margin:-8px 28px 20px;font-size:13px;color:var(--scene-dim)}
+@media (max-width:560px){.demo-note{margin:-4px 16px 16px}}
