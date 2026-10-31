@@ -20,3 +20,4 @@
 - [Вопросы и ответы](https://quota.uz/faq)
 - [О компании](https://quota.uz/about)
 - [Контакты](https://quota.uz/contacts)
+- [Политика конфиденциальности](https://quota.uz/privacy)

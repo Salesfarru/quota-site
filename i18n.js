@@ -88,6 +88,74 @@ window.QUOTA_I18N = {
 "Hozir",
 "Now"
 ],
+"Политика конфиденциальности — Quota": [
+"Maxfiylik siyosati — Quota",
+"Privacy policy — Quota"
+],
+"Какие данные собирает сайт quota.uz, какие сервисы аналитики использует и как попросить удалить ваши данные.": [
+"quota.uz sayti qanday maʼlumotlarni yigʻishi, qaysi tahlil xizmatlaridan foydalanishi va maʼlumotlaringizni oʻchirishni qanday soʻrash mumkinligi.",
+"What data quota.uz collects, which analytics services it uses and how to ask us to delete your data."
+],
+"Конфиденциальность": [
+"Maxfiylik",
+"Privacy"
+],
+"Политика конфиденциальности": [
+"Maxfiylik siyosati",
+"Privacy policy"
+],
+"Какие данные собирает сайт quota.uz и зачем. Обновлено 31 октября 2026 года.": [
+"quota.uz sayti qanday maʼlumotlarni va nima uchun yigʻadi. 2026-yil 31-oktabrda yangilangan.",
+"What data quota.uz collects and why. Updated 31 October 2026."
+],
+"Что мы собираем": [
+"Nimalarni yigʻamiz",
+"What we collect"
+],
+"На сайте нет форм и личного кабинета. Мы автоматически получаем обезличенные сведения о посещении: какие страницы открыты, откуда пришёл посетитель, какое у него устройство и браузер, примерное местоположение, клики и прокрутка.": [
+"Saytda formalar va shaxsiy kabinet yoʻq. Tashrif haqida shaxsni aniqlamaydigan maʼlumotlarni avtomatik olamiz: qaysi sahifalar ochilgani, tashrif buyuruvchi qayerdan kelgani, qurilmasi va brauzeri, taxminiy joylashuvi, bosishlar va sahifani aylantirish.",
+"The site has no forms or user accounts. We automatically receive anonymised information about visits: which pages were opened, where the visitor came from, their device and browser, approximate location, clicks and scrolling."
+],
+"Какие сервисы мы используем": [
+"Qaysi xizmatlardan foydalanamiz",
+"Which services we use"
+],
+"Яндекс Метрика, включая Вебвизор, а также Google Tag Manager и сервисы Google для статистики. Вебвизор записывает действия на странице: движения курсора, клики и прокрутку. Эти компании обрабатывают данные по своим правилам и могут хранить их за пределами Узбекистана.": [
+"Yandex Metrika, jumladan Vebvizor, shuningdek statistika uchun Google Tag Manager va Google xizmatlari. Vebvizor sahifadagi harakatlarni yozib oladi: kursor harakati, bosishlar va sahifani aylantirish. Bu kompaniyalar maʼlumotlarni oʻz qoidalari asosida qayta ishlaydi va Oʻzbekistondan tashqarida saqlashi mumkin.",
+"Yandex Metrica, including Webvisor, as well as Google Tag Manager and Google services for statistics. Webvisor records actions on the page: cursor movements, clicks and scrolling. These companies process data under their own rules and may store it outside Uzbekistan."
+],
+"Cookie и настройки": [
+"Cookie va sozlamalar",
+"Cookies and settings"
+],
+"Счётчики используют cookie. Выбранные тема и язык хранятся в вашем браузере. Cookie можно удалить или запретить в настройках браузера, сайт продолжит работать.": [
+"Hisoblagichlar cookie fayllaridan foydalanadi. Tanlangan mavzu va til brauzeringizda saqlanadi. Cookie fayllarini brauzer sozlamalarida oʻchirish yoki taqiqlash mumkin, sayt ishlashda davom etadi.",
+"The counters use cookies. Your chosen theme and language are stored in your browser. You can delete or block cookies in your browser settings, and the site will keep working."
+],
+"Когда вы нам пишете": [
+"Bizga yozganingizda",
+"When you contact us"
+],
+"Если вы пишете в Telegram, Instagram, на почту или звоните, мы получаем то, что вы сообщаете: имя, контакт и содержание обращения. Эти данные нужны только для ответа и работы с вами.": [
+"Telegram, Instagram yoki pochta orqali yozsangiz yoki qoʻngʻiroq qilsangiz, siz aytgan maʼlumotlarni olamiz: ism, aloqa maʼlumoti va murojaat mazmuni. Bu maʼlumotlar faqat javob berish va siz bilan ishlash uchun kerak.",
+"If you message us on Telegram, Instagram or by email, or call us, we receive what you tell us: your name, contact details and the content of your request. We use this data only to reply and to work with you."
+],
+"Данные клиентов": [
+"Mijozlar maʼlumotlari",
+"Client data"
+],
+"Доступ к CRM, звонкам и отчётам мы получаем только после подписания соглашения о конфиденциальности.": [
+"CRM, qoʻngʻiroqlar va hisobotlarga kirish huquqini faqat maxfiylik kelishuvi imzolangandan keyin olamiz.",
+"We get access to your CRM, calls and reports only after signing a non-disclosure agreement."
+],
+"Ваши данные и вопросы": [
+"Maʼlumotlaringiz va savollar",
+"Your data and questions"
+],
+"Чтобы узнать, какие данные о вас у нас есть, или попросить их удалить, напишите нам на почту.": [
+"Siz haqingizda qanday maʼlumotlar borligini bilish yoki ularni oʻchirishni soʻrash uchun bizga pochta orqali yozing.",
+"To find out what data we hold about you or to ask us to delete it, email us."
+],
 "После внедрения": [
 "Joriy etishdan keyin",
 "After implementation"

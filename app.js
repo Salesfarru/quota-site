@@ -134,6 +134,20 @@
   document.addEventListener('click', function(e){ if (!lang.contains(e.target)) setLang(false); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && lang.classList.contains('open')) { setLang(false); langBtn.focus(); } });
 
+  // Analytics: clicks on contact links
+  var METRIKA = 113953224, GOALS = [[/^https:\/\/t\.me\//, 'telegram_click'], [/^tel:/, 'phone_click'], [/^mailto:/, 'email_click']];
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    GOALS.forEach(function(g){
+      if (!g[0].test(href)) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event: g[1]});
+      if (window.ym) window.ym(METRIKA, 'reachGoal', g[1]);
+    });
+  });
+
   // Copy buttons
   document.querySelectorAll('[data-copy]').forEach(function(btn){
     btn.addEventListener('click', function(){
